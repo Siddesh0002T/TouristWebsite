@@ -19,9 +19,9 @@
     <div class="Bar">
         <nav>
             <ul>
-            <li><a href="HistoryofNas.php">History of Nashik</a></li>
+            <li><a href="hisofnas.php">History of Nashik</a></li>
             <li><a href="destination.php">Destination</a></li>
-            <li><a href="HistoryofNas.html">Images</a></li>  
+            <li><a href="image.php">Images</a></li>  
             
             </ul>
         </nav>
