@@ -3,11 +3,26 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    background-attachment: fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+.Bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
+.Bar nav ul li {
+    display: inline;
+    margin-right: 20px;
+    color: white;
 }
 
 h1 {
@@ -19,8 +34,4 @@ h1 {
     font-weight: 400;
     font-style: normal;
     font-size: 150px;
-}
-
-.bar{
-    
 }
