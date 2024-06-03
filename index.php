@@ -6,14 +6,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=REM:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
 
     <div class="Bar">
-        <nav><ul><li><a href="History of Nashik"></a></li></ul></nav>
+        <nav>
+            <ul>
+            <li><a href="HistoryofNas.html">History of Nashik</a></li>
+            
+            </ul>
+        </nav>
     </div>
-
+    
     <h1>Nashik</h1>
 
     
