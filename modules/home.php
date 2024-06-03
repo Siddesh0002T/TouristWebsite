@@ -16,16 +16,27 @@
 </head>
 <body>
 
+
+
     <div class="Bar">
         <nav>
             <ul>
-            <li><a href="hisofnas.php">History of Nashik</a></li>
-            <li><a href="destination.php">Destination</a></li>
-            <li><a href="image.php">Images</a></li>  
-            
+                <li><a href="hisofnas.php">History of Nashik</a></li>
+                <li><a href="destination.php">Destination</a></li>
+                <li><a href="image.php">Images</a></li>  
             </ul>
         </nav>
-    </div>
+        
+        </div>
+        
+        
+        <input class="search__input" type="text" placeholder="Search">
+        
+    
+
+        
+    
+
     
     <h1>Nashik</h1>
 
@@ -33,3 +44,4 @@
     
 </body>
 </html>
+

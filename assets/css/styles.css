@@ -10,7 +10,10 @@ body {
     height: 100vh;
     margin: 0;
 }
+.box{
 
+    display: flex;
+}
 .Bar {
     position: absolute;
     top: 0;
@@ -19,11 +22,16 @@ body {
 }
 
 .Bar nav ul li {
-    display: inline;
+    
     margin-right: 20px;
     color: white;
+    display: inline;
+    margin-right: 50px;
 }
 
+.search__input{
+    color: aqua;
+}
 h1 {
     color: white;
     font-size: 3em;
