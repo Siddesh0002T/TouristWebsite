@@ -16,7 +16,7 @@
     <div class="Bar">
         <nav>
             <ul>
-            <li><a href="HistoryofNas.html">Tourist Website of Nashik</a></li>
+            <li><a href="HistoryofNas.html">TouristWebsite of Nashik</a></li>
             
             </ul>
         </nav>
