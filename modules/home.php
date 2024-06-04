@@ -27,6 +27,12 @@
         </ul>
     </nav>
     <input class="search__input" type="text" placeholder="Search">
+
+    <button onclick="location.href='login.php'" type="button">
+        Login
+</button>
+
+
 </div>
 
         

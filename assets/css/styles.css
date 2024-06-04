@@ -61,9 +61,19 @@ li a{
 }
 
 
-
-
-
+   button {
+            font-size: 20px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
 
 h1 {
     color: white;
