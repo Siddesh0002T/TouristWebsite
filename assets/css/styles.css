@@ -22,17 +22,24 @@ body {
 .Bar nav ul li {
     display: inline;
     margin-right: 50px;
+    
     color: white;   
     
 }
 
 li a{
-    color: rgb(15, 143, 255);
+    color: rgb(255, 255, 255);
     font-size: 20px;
+    
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
+    margin-top: 50px;
+}
+
+li a:hover{
+    color: #feac40;
 }
 
 
@@ -57,23 +64,35 @@ li a{
 .search__input:focus {
     border-color: #feac40; /* Border color when input is focused */
     background-color: #000000; /* Change this to any color you want */
-    color: #feac40; /* Text color when input is focused */
+    color: #ffac40; /* Text color when input is focused */
 }
 
 
-   button {
-            font-size: 20px;
-            padding: 10px 20px;
-            color: white;
-            background-color: #4CAF50;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
+.container {
+    position: relative;
+}
+
+button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 20px;
+    padding: 21px 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+button:hover {
+    color: #feac40;
+}
+
 
 h1 {
     color: white;
