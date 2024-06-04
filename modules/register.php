@@ -13,6 +13,8 @@
     $query = "INSERT INTO `tuser` (`id`, `uname`, `uemail`, `pass`, `register_date`) VALUES (NULL, '$uname', '$uemail', '$pass', current_timestamp());";
     mysqli_query($conn, $query);
     // echo "<h1 style='color:red'>done</h1>"; 
+    header("Location: login.php" ,true);
+    exit();
 }
 ?>
 <!DOCTYPE html>
