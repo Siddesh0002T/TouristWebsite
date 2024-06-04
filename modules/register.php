@@ -7,12 +7,12 @@
     $uemail = $_POST['uemail'];
     $pass = $_POST['pass'];
  // debugging code 
-    echo "<h1 style='color:red'>". $uname ."</h1>";
+ /*   echo "<h1 style='color:red'>". $uname ."</h1>";
     echo "<h1 style='color:red'>". $uemail ."</h1>";
-    echo "<h1 style='color:red'>". $pass ."</h1>";
+    echo "<h1 style='color:red'>". $pass ."</h1>";*/
     $query = "INSERT INTO `tuser` (`id`, `uname`, `uemail`, `pass`, `register_date`) VALUES (NULL, '$uname', '$uemail', '$pass', current_timestamp());";
     mysqli_query($conn, $query);
-    echo "<h1 style='color:red'>done</h1>"; 
+    // echo "<h1 style='color:red'>done</h1>"; 
 }
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
         <h3 style="margin-top: 50px;">Register Here</h3>
         <?php 
         // debugging code
-        echo $_SERVER['REQUEST_METHOD'];
+     //   echo $_SERVER['REQUEST_METHOD'];
         ?>
         <label for="register-username">Username</label>
         <input type="text" placeholder="Create your username" id="register-username" name="uname" required>
