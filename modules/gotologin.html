@@ -22,19 +22,23 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <div class="formbg">
         <h3>Thank You For Register !</h3>
          
         <!---button onclick="gotoLogin()">Go to Log In</!---button -->
-        <a href="login.php">Go to Log In</a>
-    </form>
+        <button id="myButton">Go to Log In</button>
+    </div>
     <script src="../assets/js/gotologin.js"></script>
     <script>
     console.log("Hello World");
+// Get the button element
+const button = document.getElementById("myButton");
+
+// Attach the gotoLogin function to the button's click event
+button.addEventListener("click", gotoLogin);
 
 function gotoLogin () {
-    console.log("GoToLogIn")
-    window.location = "http://localhost:8080/TouristWebsite/modules/login.php";
+    window.location = 'login.php';
 }
 
     </script>

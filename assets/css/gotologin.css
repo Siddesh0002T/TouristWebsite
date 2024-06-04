@@ -39,7 +39,7 @@ body{
     right: -30px;
     bottom: -80px;
 }
-form{
+.formbg{
     height: 290px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
@@ -53,14 +53,14 @@ form{
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
 }
-form *{
+.formbg *{
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
-form h3{
+.formbg h3{
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;
@@ -87,7 +87,7 @@ input{
 ::placeholder{
     color: #e5e5e5;
 }
-a{
+#myButton{
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -113,10 +113,4 @@ a{
 }
 .social div:hover{
   background-color: rgba(255,255,255,0.47);
-}
-.social .fb{
-  margin-left: 25px;
-}
-.social i{
-  margin-right: 4px;
 }

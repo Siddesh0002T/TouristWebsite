@@ -72,7 +72,7 @@ li a:hover{
     position: relative;
 }
 
-button {
+#myButton {
     position: absolute;
     right: 0;
     bottom: 0;
