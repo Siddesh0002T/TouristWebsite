@@ -12,6 +12,6 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 else{
-     echo"<h1 style='color:red'>Connected</h1>";
+   //  echo"<h1 style='color:red'>Connected</h1>";
    }
 ?>
