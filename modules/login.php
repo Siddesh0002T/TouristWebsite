@@ -25,11 +25,11 @@
     <form>
         <h3>Login Here</h3>
 
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
+        <label for="username">Email</label>
+        <input type="email" placeholder="Email id" id="username" name="uemail" required>
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+        <input type="password" placeholder="Password" id="password" name="pass" required>
 
         <button>Log In</button>
         <a href="register.php">Register</a>
