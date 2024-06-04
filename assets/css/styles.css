@@ -94,7 +94,7 @@ button:hover {
 }
 
 
-h1 {
+.title h1 {
     color: white;
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -102,11 +102,31 @@ h1 {
     font-family: "Karantina", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 150px;
+    font-size: 250px;
 }
 
 
 
-
+.circle-container {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .circle-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .circle-container span {
+      position:absolute;
+      bottom :10px;
+      left :0px;
+      width :100%;
+      text-align:center;
+  }
+  
 
 
