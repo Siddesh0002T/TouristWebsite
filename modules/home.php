@@ -37,19 +37,19 @@
 
     <div class="title">
     <h1>Nashik</h1>
-    </div>
-    
+    </div> 
+    <
 
     <div class="circle">
 
     <div class="circle-container">
-  <img src="path-to-holy-places-image.jpg" alt="Holy Places">
-  <span>Holy Places</span>
+  <img src="../assets/img/Holyplace.jpg" alt="Holy Places">
+  
 </div>
 
 <div class="circle-container">
   <img src="manav-agarwal-DeKDO0KNunU-unsplash.jpg" alt="Nature">
-  <span>Nature</span>
+  
 </div>
 
 
@@ -62,4 +62,6 @@
     
 </body>
 </html>
+
+
 
