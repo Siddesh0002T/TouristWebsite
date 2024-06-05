@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="incss.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
@@ -12,155 +12,25 @@
     <title>TouristWebsite</title>
 </head>
 <body>
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #222;
-  color: #fff;
-  margin: 0;
-}
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header {
-  background-color: #222;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  width: 100%;
-}
-
-.header a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1rem;
-}
-
-.header input {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 5px;
-}
-
-.header button {
-  background-color: #ff6600;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.hero {
-  background-image: url("./assets/img/extendBGblur.jpg");
-  background-size: cover;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px #000;
-}
-
-.categories {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
-  width: 100%;
-}
-
-.category {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-}
-
-.category img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-.section {
-  padding: 2rem;
-  width: 100%;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.section p {
-  line-height: 1.5;
-  margin-bottom: 2rem;
-}
-
-.places {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1rem;
-}
-
-.place {
-  width: 200px;
-  height: 200px;
-  background-size: cover;
-  cursor: pointer;
-}
-
-.call-to-action {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-}
-
-.call-to-action button {
-  background-color: #ff6600;
-  color: #fff;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.call-to-action button:hover {
-  background-color: #ff9933;
-}
-
-</style>
 </head>
 <body>
-<div class="container">
-  <header class="header">
-    <div>
-      <a href="#">History of Nashik</a>
-      <a href="#">Destination</a>
-      <a href="#">Images</a>
-    </div>
-    <div>
-      <input type="text" placeholder="Search...">
-      <button>Explore</button>
-    </div>
+<div class="Bar">
+    <nav>
+        <ul>
+            <li><a href="hisofnas.php">History of Nashik</a></li>
+            <li><a href="destination.php">Destination</a></li>
+            <li><a href="image.php">Images</a></li>  
+        </ul>
+    </nav>
+    <input class="search__input" type="text" placeholder="Search">
+
+    <button onclick="location.href='login.php'" type="button">
+        Login
+</button>
+
+
+</div>
   </header>
 
   <div class="hero">

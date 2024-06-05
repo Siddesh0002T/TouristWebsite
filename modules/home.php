@@ -35,33 +35,40 @@
 
 </div>
 
+<div class="container">
     <div class="title">
-    <h1>Nashik</h1>
+        <h1>Nashik</h1>
     </div> 
-    <
-
-    <div class="circle">
-
-    <div class="circle-container">
-  <img src="../assets/img/Holyplace.jpg" alt="Holy Places">
-  
-</div>
-
-<div class="circle-container">
-  <img src="manav-agarwal-DeKDO0KNunU-unsplash.jpg" alt="Nature">
-  
-</div>
 
 
-    
+    <div class="categories">
+        <div class="category">
+            <img src="./assest/img/Holyplace.jpg" alt="">
+            <p>Holy Places</p>
+
+            <div class="nature">
+            <img src="./assest/img/Holyplace.jpg" alt="">
+            <p>Nature</p>
+            </div>
+
+            <div class="food">
+            <img src="./assest/img/Holyplace.jpg" alt="">
+            <p>Food</p>
+            </div>
+
+            <div class="hotel">
+            <img src="./assest/img/Holyplace.jpg" alt="">
+            <p>Hotel</p>
+            </div>
+
+        </div>
     </div>
+</div>
 
-    
 
     
     
 </body>
 </html>
-
 
 

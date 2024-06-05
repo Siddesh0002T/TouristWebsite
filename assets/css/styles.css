@@ -12,7 +12,7 @@ body {
 }
 
 .Bar {
-    display: flex; /* This will make the children of .Bar align horizontally */
+    display: flex; 
      
     position: absolute;
     top: 0;
@@ -94,6 +94,12 @@ button:hover {
 }
 
 
+.container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
 .title h1 {
     color: white;
     font-size: 3em;
@@ -107,27 +113,23 @@ button:hover {
 
 
 
-.circle-container {
-    width: 100px; /* Adjust as needed */
-    height: 100px; /* Adjust as needed */
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    
-  }
-  
-  .circle-container img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .circle-container span {
-      position:absolute;
-      bottom :10px;
-      left :0px;
-      width :100%;
-      text-align:center;
-  }
-  
+.categories .category {
+    display: flex;
+    justify-content: space-between;
+}
 
+.category p {
+    color: #FFFFFF;
+}
 
+.nature p{
+    color: white;
+}
+
+.food p{
+    color: #ffffff;
+}
+
+.hotel p{
+    color: #ffffff;
+}
