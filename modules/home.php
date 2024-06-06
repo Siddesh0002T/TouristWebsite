@@ -43,11 +43,11 @@
 
     <div class="categories">
         <div class="category">
-            <img src="../assest/img/HolyPlace.jpg"alt="">
+            <img src="../assest/img/Holyplace.jpg"alt="">
             <p>Holy Places</p>
 
             <div class="nature">
-            <img src="../assest/img/" alt="">
+            <img src="../../assest/img/" alt=""width="100px" height="100px">
             <p>Nature</p>
             </div>
 
