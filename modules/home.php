@@ -18,7 +18,7 @@
 
 
 
-<div class="Bar">
+ <div class="Bar">
     <nav>
         <ul>
             <li><a href="hisofnas.php">History of Nashik</a></li>
@@ -30,40 +30,66 @@
 
     <button onclick="location.href='login.php'" type="button">
         Login
-</button>
+  </button>
+ </div>
 
 
-</div>
 
-<div class="container">
-    <div class="title">
+  <div class="maincontainer">
+
+  <div class="title">
         <h1>Nashik</h1>
     </div> 
+    
 
 
     <div class="categories">
-        <div class="category">
-            <img src="../assest/img/HolyPlace.jpg"alt="">
-            <p>Holy Places</p>
 
-            <div class="nature">
-            <img src="../assest/img/" alt="">
-            <p>Nature</p>
-            </div>
-
-            <div class="food">
-            <img src="../assest/img/" alt="">
-            <p>Food</p>
-            </div>
-
-            <div class="hotel">
-            <img src="../assest/img/" alt="">
-            <p>Hotel</p>
-            </div>
-
-        </div>
+<a href="holy-places.php">
+    <div class="temple">
+        <img src="../assets/img/Temple1.jpg" alt="" class="small-image">
+        <p>Holy Places</p>
     </div>
+</a>
+
+<a href="nature.php">
+    <div class="nature">
+        <img src="../assets/img/Nature1.jpg" alt="" class="small-image">
+        <p>Nature</p>
+    </div>
+</a>
+
+<a href="food.php">
+    <div class="food">
+        <img src="../assets/img/food.jpg" alt="" class="small-image">
+        <p>Food</p>
+    </div>
+</a>
+
+<a href="hotel.php">
+    <div class="hotel">
+        <img src="../assets/img/hotel.jpg" alt="" class="small-image">
+        <p>Hotel</p>
+    </div>
+</a>
+
 </div>
+
+
+  </div>
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
 
 
     
