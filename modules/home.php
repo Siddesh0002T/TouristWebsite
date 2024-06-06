@@ -43,21 +43,21 @@
 
     <div class="categories">
         <div class="category">
-            <img src="./assest/img/Holyplace.jpg" alt="">
+            <img src="../assest/img/Holyplace.jpg"alt="">
             <p>Holy Places</p>
 
             <div class="nature">
-            <img src="./assest/img/Holyplace.jpg" alt="">
+            <img src="../assest/img/Holyplace.jpg" alt="">
             <p>Nature</p>
             </div>
 
             <div class="food">
-            <img src="./assest/img/Holyplace.jpg" alt="">
+            <img src="../assest/img/Holyplace.jpg" alt="">
             <p>Food</p>
             </div>
 
             <div class="hotel">
-            <img src="./assest/img/Holyplace.jpg" alt="">
+            <img src="../assest/img/Holyplace.jpg" alt="">
             <p>Hotel</p>
             </div>
 

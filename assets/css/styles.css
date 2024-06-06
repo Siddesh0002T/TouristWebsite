@@ -133,3 +133,112 @@ button:hover {
 .hotel p{
     color: #ffffff;
 }
+
+
+
+@media (max-width: 768px) {
+    .Bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Bar nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .Bar nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    li a {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .search__input {
+        margin-top: 10px;
+        margin-left: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    Button {
+        position: relative;
+        margin: 10px 0;
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+}
+
+/* General Styles */
+.Bar nav ul li {
+    display: inline;
+    margin-right: 50px;
+    color: white;   
+}
+
+li a {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 50px;
+}
+
+li a:hover {
+    color: #feac40;
+}
+
+.search__input {
+    margin-top: 15px;
+    margin-left: 50px;
+    width: 200px; /* Adjust as needed */
+    height: 35px; /* Adjust as needed */
+    border: 1px solid #FFFFFF; /* Light border color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 5px 20px; /* Space around text */
+    background: transparent;
+    color: #FFFFFF; /* Text color */
+    outline: none;
+}
+
+.search__input::placeholder {
+    color: #FFFFFF; /* Placeholder text color */
+}
+
+.search__input:focus {
+    border-color: #feac40; /* Border color when input is focused */
+    background-color: #000000; /* Change this to any color you want */
+    color: #ffac40; /* Text color when input is focused */
+}
+
+.container {
+    position: relative;
+}
+
+Button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 20px;
+    padding: 21px 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+button:hover {
+    color: #feac40;
+}
