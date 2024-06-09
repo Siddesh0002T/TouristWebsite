@@ -7,8 +7,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $pass = $_POST["pass"]; 
     
      
-    // $sql = "Select * from users where username='$username' AND password='$password'";
-    $query = "Select * from tuser where uemail='$uemail'";
+    $query = "Select * from tuser where uemail='$uemail' AND pass='$pass'";
+    // $query = "Select * from tuser where uemail='$uemail'";
     $result = mysqli_query($conn, $query);
     $num = mysqli_num_rows($result);
     if ($num == 1){
