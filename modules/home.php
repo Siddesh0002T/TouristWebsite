@@ -35,13 +35,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         <ul>
             <li><a href="hisofnas.php">History of Nashik</a></li>
             <li><a href="destination.php">Destination</a></li>
-            <li><a href="image.php">Images</a></li>  
+            <li><a href="image.php">Images</a></li> 
+            <li> <?php 
+        echo "<p style='color:#fff;'>Welcome ".$_SESSION['uname'] ."!</p>";
+        ?></li> 
         </ul>
     </nav>
     <input class="search__input" type="text" placeholder="Search">
-    <?php 
-        echo "<h1 style='color:#fff;'>".$_SESSION['uname'] ."</h1>";
-        ?>
+   
     
     <button onclick=""  type="button" id="LogOutBtn">
         Logout
@@ -51,8 +52,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 
 
   <div class="maincontainer">
-
+ 
   <div class="title">
+    
         <h1>Nashik</h1>
      
     </div> 
