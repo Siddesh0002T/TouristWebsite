@@ -41,7 +41,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <?php 
         echo "<h1 style='color:#fff;'>".$_SESSION['uname'] ."</h1>";
         ?>
-    <button onclick="location.href='logout.php'" type="button">
+    <button onclick=""  type="button" id="LogOutBtn">
         Logout
   </button>
  </div>
@@ -102,7 +102,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     
 
    
-    
+  <script src="../assets/js/logout.js"></script>
 </body>
 </html>
 
