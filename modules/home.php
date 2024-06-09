@@ -41,8 +41,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <?php 
         echo "<h1 style='color:#fff;'>".$_SESSION['uname'] ."</h1>";
         ?>
-    <button onclick="location.href='login.php'" type="button">
-        Login
+    <button onclick="location.href='logout.php'" type="button">
+        Logout
   </button>
  </div>
 
