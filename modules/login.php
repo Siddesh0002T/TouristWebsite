@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session at the beginning
+
 // connect to database
 include("../config/db_connect.php");
 
@@ -7,17 +9,22 @@ if (isset($_POST['login'])) {
     $pass = $_POST['pass'];
 
     // Query to retrieve user data
-    $query = "SELECT * FROM `tuser` WHERE `uemail` = '$uemail' AND `pass` = '$pass'";
+    $query = "SELECT * FROM `tuser` WHERE `uemail` = '$uname' AND `pass` = '$pass'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {
         // User exists, login successful
         $user_data = mysqli_fetch_assoc($result);
-        session_start();
         $_SESSION['uname'] = $user_data['uname'];
         $_SESSION['uemail'] = $user_data['uemail'];
-        header("Location: home.php",true);
-        exit();
+
+        // Check if the redirect is working
+        if (!headers_sent()) {
+            header("Location: home.php");
+            exit();
+        } else {
+            echo "Redirect not working. Output might have been sent to the browser.";
+        }
     } else {
         // User does not exist or password is incorrect
         $error = "Invalid username or password";
@@ -48,7 +55,7 @@ if (isset($_POST['login'])) {
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <form method="POST">
         <h3>Login Here</h3>
         <?php if (isset($error)) { ?>
             <p style="color: red;"><?php echo $error; ?></p>
