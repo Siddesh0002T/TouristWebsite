@@ -1,20 +1,44 @@
 <?php
+$emailEx = false;
+$exists = false;
 // connect to database  
-   include("../config/db_connect.php");
- //  if($_SERVER['REQUEST_METHOD']==$_POST)
- if(isset($_POST['register'])){
+include("../config/db_connect.php");
+
+if(isset($_POST['register'])){
     $uname = $_POST['uname'];
     $uemail = $_POST['uemail'];
     $pass = $_POST['pass'];
- // debugging code 
- /*   echo "<h1 style='color:red'>". $uname ."</h1>";
-    echo "<h1 style='color:red'>". $uemail ."</h1>";
-    echo "<h1 style='color:red'>". $pass ."</h1>";*/
-    $query = "INSERT INTO `tuser` (`id`, `uname`, `uemail`, `pass`, `register_date`) VALUES (NULL, '$uname', '$uemail', '$pass', current_timestamp());";
-    mysqli_query($conn, $query);
-    // echo "<h1 style='color:red'>done</h1>"; 
-    header("Location: gotologin.html" ,true);
-    exit();
+
+    // Check if email already exists
+    $existsSql = "SELECT * FROM `tuser` WHERE `uemail` = ?";
+    $stmt = mysqli_prepare($conn, $existsSql);
+   // echo $stmt;
+    mysqli_stmt_bind_param($stmt, "s", $uemail);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $numExistRow = mysqli_num_rows($result);
+
+    if($numExistRow > 0){
+        $exists = true;
+    } else {
+        $exists = false;
+    }
+
+    if($exists == false){
+        $query = "INSERT INTO `tuser` (`id`, `uname`, `uemail`, `pass`, `register_date`) VALUES (NULL, ?, ?, ?, current_timestamp());";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "sss", $uname, $uemail, $pass);
+        mysqli_stmt_execute($stmt);
+
+        if (mysqli_stmt_affected_rows($stmt) > 0) {
+            header("Location: gotologin.html");
+            exit();
+        } else {
+            echo "<p style='color:red'>Error registering user</p>";
+        }
+    } else {
+      $emailEx ="<p style='color:red'>Email already exists</p>";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -50,7 +74,7 @@
         ?>
         <label for="register-username">Username</label>
         <input type="text" placeholder="Create your username" id="register-username" name="uname" required>
-
+      <?php echo  $emailEx; ?>
         <label for="register-email">Email</label>
         <input type="email" placeholder="Enter your email" id="register-email" name="uemail" required>
 
