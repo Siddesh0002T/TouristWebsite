@@ -17,8 +17,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $login = true;
                 session_start();
                 $_SESSION['loggedin'] = true;
-                $_SESSION['uname'] = $uname;
+                $_SESSION['uemail'] = $uemail;
+                $_SESSION['uname'] = $row['uname']; // Get the user's name from the database
                 header("location: home.php");
+         //debug        echo  $_SESSION['uname'];
+
         }
         
     } 

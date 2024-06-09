@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    header("location: login.php");
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +38,7 @@
         </ul>
     </nav>
     <input class="search__input" type="text" placeholder="Search">
-
+  
     <button onclick="location.href='login.php'" type="button">
         Login
   </button>
@@ -41,6 +50,9 @@
 
   <div class="title">
         <h1>Nashik</h1>
+        <?php 
+        echo "<h1 style='color:#fff;'>".$_SESSION['uname'] ."</h1>";
+        ?>
     </div> 
     
 
