@@ -13,16 +13,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $num = mysqli_num_rows($result);
     if ($num == 1){
         while($row=mysqli_fetch_assoc($result)){
-            if (password_verify($pass, $row['pass'])){ 
+           
                 $login = true;
                 session_start();
                 $_SESSION['loggedin'] = true;
                 $_SESSION['uname'] = $uname;
                 header("location: home.php");
-            } 
-            else{
-                $showError = "Invalid Credentials";
-            }
         }
         
     } 
