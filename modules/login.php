@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password" name="pass" required>
-
+     
         <button>Log In</button>
         <a href="register.php">Register</a>
     </form>

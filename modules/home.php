@@ -38,7 +38,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         </ul>
     </nav>
     <input class="search__input" type="text" placeholder="Search">
-  
+    <?php 
+        echo "<h1 style='color:#fff;'>".$_SESSION['uname'] ."</h1>";
+        ?>
     <button onclick="location.href='login.php'" type="button">
         Login
   </button>
@@ -50,9 +52,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 
   <div class="title">
         <h1>Nashik</h1>
-        <?php 
-        echo "<h1 style='color:#fff;'>".$_SESSION['uname'] ."</h1>";
-        ?>
+     
     </div> 
     
 
