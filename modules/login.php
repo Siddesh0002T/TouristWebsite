@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
      
     $query = "Select * from tuser where uemail='$uemail' AND pass='$pass'";
-    // $query = "Select * from tuser where uemail='$uemail'";
+    //Debug $query = "Select * from tuser where uemail='$uemail'";
     $result = mysqli_query($conn, $query);
     $num = mysqli_num_rows($result);
     if ($num == 1){
@@ -17,8 +17,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $login = true;
                 session_start();
                 $_SESSION['loggedin'] = true;
-                $_SESSION['uname'] = $uname;
+                $_SESSION['uemail'] = $uemail;
+                $_SESSION['uname'] = $row['uname']; // Get the user's name from the database
                 header("location: home.php");
+         //debug        echo  $_SESSION['uname'];
+
         }
         
     } 
@@ -62,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password" name="pass" required>
-
+     
         <button>Log In</button>
         <a href="register.php">Register</a>
     </form>
