@@ -30,24 +30,23 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 
 
 
- <div class="Bar">
+<div class="Bar">
     <nav>
         <ul>
             <li><a href="hisofnas.php">History of Nashik</a></li>
             <li><a href="destination.php">Destination</a></li>
             <li><a href="image.php">Images</a></li> 
-            <li> <?php 
-        echo "<p style='color:#fff;'>Welcome ".$_SESSION['uname'] ."!</p>";
+            <li class='welcome'> <?php 
+        echo "Welcome ".$_SESSION['uname'] ."!";
         ?></li> 
+            <li><input class="search__input" type="text" placeholder="Search"></li>
+            <li><button onclick=""  type="button" id="LogOutBtn">Logout</button></li>
         </ul>
     </nav>
-    <input class="search__input" type="text" placeholder="Search">
-   
-    
-    <button onclick=""  type="button" id="LogOutBtn">
-        Logout
-  </button>
- </div>
+</div>
+
+
+
 
 
 

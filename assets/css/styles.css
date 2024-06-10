@@ -13,18 +13,58 @@ body {
 
 .Bar {
     display: flex; 
-     
+    justify-content: flex-end;
     position: absolute;
     top: 0;
     width: 100%;
+    margin-top: 10px;
+    padding-right: 900px; /* Adjust as needed */
+}
+
+
+.Bar nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
 }
 
 .Bar nav ul li {
-    display: inline;
     margin-right: 50px;
-    
     color: white;   
+}
+
+.welcome{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
     
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 1px;
+}
+.welcome:hover{
+    color: #feac40;
+}
+
+#LogOutBtn {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: none;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#LogOutBtn:hover{
+    color: #feac40;
 }
 
 li a{
@@ -43,17 +83,17 @@ li a:hover{
 }
 
 
+
 .search__input {
-    margin-top: 15px;
-    margin-left: 50px;
-    width: 200px; /* Adjust as needed */
-    height: 35px; /* Adjust as needed */
-    border: 1px solid #FFFFFF; /* Light border color */
-    border-radius: 20px; /* Rounded corners */
-    padding: 5px 20px; /* Space around text */
+    color: #FFFFFF;
     background: transparent;
-    color: #FFFFFF; /* Text color */
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 5px 20px;
+    width: 200px;
+    height: 35px;
     outline: none;
+    margin-right: 20px; /* Adjust as needed */
 }
 
 .search__input::placeholder {
@@ -112,6 +152,9 @@ button:hover {
 }
 
 a {
+    text-decoration: none;
+}
+.categories p {
     text-decoration: none;
 }
 
@@ -191,6 +234,10 @@ a {
     font-weight: 400;
     font-style: normal;
     
+}
+
+.centre{
+    margin-top: 10px;
 }
 
 .centre p{
