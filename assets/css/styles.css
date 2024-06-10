@@ -104,7 +104,7 @@ button:hover {
     font-style: normal;
     font-size: 250px;
     margin-top: 350px;
-    margin-left: 550px;
+    margin-left: 700px;
 }
 .categories-container {
     display: flex;
@@ -117,7 +117,7 @@ a {
 
 .categories {
     display: flex;
-    gap: 350px;
+    gap: 300px;
     margin-top: 250px;
     
 }
@@ -195,8 +195,37 @@ a {
 
 .centre p{
     color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+    
 }
 
-.icon i {
-    color: white !important;
+.logo{
+    color: #FFFFFF;
+    margin-left: 35px;
+    size: 20px;
+    
+}
+
+@keyframes flying {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.logo {
+    color: #FFFFFF;
+    margin-left: 35px;
+    font-size: 20px;
+    animation: flying 2s infinite;
+}
+
+.flying-text {
+    color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    animation: flying 2s infinite;
 }

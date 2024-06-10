@@ -62,8 +62,8 @@
 
 
 <div class="centre">
-    <p>Scroll Down</p>
-<i class="fa-solid fa-arrow-down"></i>
+<p class="flying-text">Scroll Down</p>
+<i class="fa-solid fa-arrow-down logo"></i>
 </div>
 
 
