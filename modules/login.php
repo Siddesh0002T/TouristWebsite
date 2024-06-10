@@ -1,35 +1,32 @@
 <?php
-session_start(); // Start the session at the beginning
-
-// connect to database
-include("../config/db_connect.php");
-
-if (isset($_POST['login'])) {
-    $uname = $_POST['uemail'];
-    $pass = $_POST['pass'];
-
-    // Query to retrieve user data
-    $query = "SELECT * FROM `tuser` WHERE `uemail` = '$uname' AND `pass` = '$pass'";
+$login = false;
+$showError = false;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    include '../config/db_connect.php';
+    $uemail = $_POST["uemail"];
+    $pass = $_POST["pass"]; 
+    
+     
+    $query = "Select * from tuser where uemail='$uemail' AND pass='$pass'";
+    // $query = "Select * from tuser where uemail='$uemail'";
     $result = mysqli_query($conn, $query);
-
-    if (mysqli_num_rows($result) > 0) {
-        // User exists, login successful
-        $user_data = mysqli_fetch_assoc($result);
-        $_SESSION['uname'] = $user_data['uname'];
-        $_SESSION['uemail'] = $user_data['uemail'];
-
-        // Check if the redirect is working
-        if (!headers_sent()) {
-            header("Location: home.php");
-            exit();
-        } else {
-            echo "Redirect not working. Output might have been sent to the browser.";
+    $num = mysqli_num_rows($result);
+    if ($num == 1){
+        while($row=mysqli_fetch_assoc($result)){
+           
+                $login = true;
+                session_start();
+                $_SESSION['loggedin'] = true;
+                $_SESSION['uname'] = $uname;
+                header("location: home.php");
         }
-    } else {
-        // User does not exist or password is incorrect
-        $error = "Invalid username or password";
+        
+    } 
+    else{
+        $showError = "Invalid Credentials";
     }
 }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,8 +54,8 @@ if (isset($_POST['login'])) {
     </div>
     <form method="POST">
         <h3>Login Here</h3>
-        <?php if (isset($error)) { ?>
-            <p style="color: red;"><?php echo $error; ?></p>
+        <?php if (isset($showError)) { ?>
+            <p style="color: red;"><?php echo $showError; ?></p>
         <?php } ?>
         <label for="username">Email</label>
         <input type="email" placeholder="Email id" id="username" name="uemail" required>
