@@ -45,4 +45,5 @@ body{
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    text-align:justify;
 }
