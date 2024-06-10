@@ -1,0 +1,202 @@
+body {
+    background-image: url("../../assets/img/extendBGblur.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.Bar {
+    display: flex; 
+     
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.Bar nav ul li {
+    display: inline;
+    margin-right: 50px;
+    
+    color: white;   
+    
+}
+
+li a{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 50px;
+}
+
+li a:hover{
+    color: #feac40;
+}
+
+
+.search__input {
+    margin-top: 15px;
+    margin-left: 50px;
+    width: 200px; /* Adjust as needed */
+    height: 35px; /* Adjust as needed */
+    border: 1px solid #FFFFFF; /* Light border color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 5px 20px; /* Space around text */
+    background: transparent;
+    color: #FFFFFF; /* Text color */
+    outline: none;
+}
+
+.search__input::placeholder {
+    color: #FFFFFF; /* Placeholder text color */
+}
+
+
+.search__input:focus {
+    border-color: #feac40; /* Border color when input is focused */
+    background-color: #000000; /* Change this to any color you want */
+    color: #ffac40; /* Text color when input is focused */
+}
+
+
+
+
+Button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 20px;
+    padding: 21px 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+button:hover {
+    color: #feac40;
+}
+
+
+
+
+.title h1 {
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    font-family: "Karantina", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 250px;
+    margin-top: 350px;
+    margin-left: 550px;
+}
+.categories-container {
+    display: flex;
+    gap: 250px; /* Adjust as needed */
+}
+
+a {
+    text-decoration: none;
+}
+
+.categories {
+    display: flex;
+    gap: 350px;
+    margin-top: 250px;
+    
+}
+
+
+.temple{
+    display: flex;
+    
+
+}
+
+.small-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    
+    
+}
+
+.temple p{
+    color: #FFFFFF;
+    margin-top: 33px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.nature{
+    display: flex;
+}
+
+.nature p{
+    color: #FFFFFF;
+    margin-top: 33px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.food{
+    display: flex;
+}
+
+.food p{
+    color: #FFFFFF;
+    margin-top: 33px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.hotel{
+    display: flex;
+}
+
+.hotel p{
+    color: #FFFFFF;
+    margin-top: 33px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.centre p{
+    color: #FFFFFF;
+}
+
+.icon i {
+    color: white !important;
+}
