@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,27 +46,6 @@
 
     <div class="categories">
 
-        <div class="category">
-            <img src="../assest/img/Holyplace.jpg"alt="">
-            <p>Holy Places</p>
-
-            <div class="nature">
-            <img src="../../assest/img/" alt=""width="100px" height="100px">
-            <p>Nature</p>
-            </div>
-
-            <div class="food">
-            <img src="../assest/img/" alt="">
-            <p>Food</p>
-            </div>
-
-            <div class="hotel">
-            <img src="../assest/img/" alt="">
-            <p>Hotel</p>
-            </div>
-
-        </div>
-
 <a href="holy-places.php">
     <div class="temple">
         <img src="../assets/img/Temple1.jpg" alt="" class="small-image">
@@ -79,6 +59,13 @@
         <p>Nature</p>
     </div>
 </a>
+
+
+<div class="centre">
+    <p>Scroll Down</p>
+<i class="fa-solid fa-arrow-down"></i>
+</div>
+
 
 <a href="food.php">
     <div class="food">
@@ -101,19 +88,7 @@
     
     
 
-    
-    
-
-
-
-
-
-
-
-
-
-
-    
+   
     
 </body>
 </html>

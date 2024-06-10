@@ -193,27 +193,10 @@ a {
     
 }
 
-/*.categories .category {
-    display: flex;
-    justify-content: space-between;
-}
-
-.category p {
-    
+.centre p{
     color: #FFFFFF;
 }
 
-.nature p{
-    color: white;
+.icon i {
+    color: white !important;
 }
-
-.food p{
-    color: #ffffff;
-}
-
-.hotel p{
-    color: #ffffff;
-}
-
-*/
-
