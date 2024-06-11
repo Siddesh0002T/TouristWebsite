@@ -6,11 +6,6 @@ Tourist Website for Nashik turists
 <b>Password :</b> Admin@123
 
 # Collaborators
-<style>
-    img{
-        border-radius: 50%;
-    }
-</style>
 <table>
  <tbody>
   <tr>
