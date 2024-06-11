@@ -2,5 +2,5 @@
 Tourist Website for Nashik turists 
 
 # Admin 
-Username : Admin <br>
-Password : Admin@123
+<b>Username :</b> Admin <br>
+<b>Password :</b> Admin@123
