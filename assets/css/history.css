@@ -1,7 +1,6 @@
 body{
     background-color: rgb(46, 46, 46);
 }
-
 .imgage img {
     /* Set the image to cover the full width of the container */
     width: 100vw;
@@ -11,14 +10,9 @@ body{
     object-fit: cover;
     position: absolute;
     /* Add a blur effect to the image */
-    filter: blur(3px);
-    
-    
+    filter: blur(3px);   
 }
-
-
 .title h1{
-
     position: relative;
     color: aliceblue;
     font-family: Arial, Helvetica, sans-serif;
@@ -26,7 +20,6 @@ body{
     text-align: center;
     padding-top: 20px;
 }
-
 .title {
     /* Center the text */
     text-align: center;
@@ -35,13 +28,11 @@ body{
     /* Center the content horizontally */
     margin: 0 auto;
 }   
-
 .title p {
     position: relative;
     /* Remove default margins */
     margin: 0;
     /* Add some space at the bottom of each element */
-
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
