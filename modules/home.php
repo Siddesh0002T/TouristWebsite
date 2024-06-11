@@ -33,7 +33,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 <div class="Bar">
     <nav>
         <ul>
-            <li><a href="hisofnas.php">History of Nashik</a></li>
+            <li><a href="hisofnas.html">History of Nashik</a></li>
             <li><a href="destination.php">Destination</a></li>
             <li><a href="image.php">Images</a></li> 
             <li class='welcome'> <?php 
