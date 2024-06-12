@@ -133,6 +133,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <th scope="col">Email</th>
                             <th scope="col">Date And Time</th>
                             <th scope="col">Action</th>
+                            <th scope="col">Block/Unblock</th>
+                        
                         </tr>
                     </thead>
                     <tbody>
@@ -148,6 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <td>" . $row['uemail'] . "</td>
                                     <td>" . $row['register_date'] . "</td>
                                     <td><button class='btn btn-sm btn-primary edit' id=".$row['id'].">Edit</button> <button class='btn btn-sm btn-danger delete' id=d".$row['id'].">Delete</button></td>
+                                    <td>". $row['block_unblock'] ."</td>
                                 </tr>";
                         }
                         ?>
