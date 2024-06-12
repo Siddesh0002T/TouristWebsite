@@ -1,4 +1,4 @@
-body {
+/*body {
     background-image: url("../../assets/img/extendBGblur.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@ body {
     top: 0;
     width: 100%;
     margin-top: 10px;
-    padding-right: 900px; /* Adjust as needed */
+    padding-right: 900px; 
 }
 
 
@@ -93,18 +93,17 @@ li a:hover{
     width: 200px;
     height: 35px;
     outline: none;
-    margin-right: 20px; /* Adjust as needed */
+    margin-right: 20px; 
 }
 
 .search__input::placeholder {
-    color: #FFFFFF; /* Placeholder text color */
-}
+    color: #FFFFFF; 
 
 
 .search__input:focus {
-    border-color: #feac40; /* Border color when input is focused */
-    background-color: #000000; /* Change this to any color you want */
-    color: #ffac40; /* Text color when input is focused */
+    border-color: #feac40; 
+    background-color: #000000; 
+    color: #ffac40; 
 }
 
 
@@ -148,7 +147,7 @@ button:hover {
 }
 .categories-container {
     display: flex;
-    gap: 250px; /* Adjust as needed */
+    gap: 250px; 
 }
 
 a {
@@ -278,4 +277,503 @@ a {
 }
 
 
+*/
 
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+.Bar {
+    position: relative;
+}
+
+.Bar img {
+    position: absolute;
+    top: -80px;
+    
+    /* This will make the image cover the entire container */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* This makes the image responsive */
+    max-width: 100%;
+    height: auto;
+
+    /* This will place the image behind other elements */
+    z-index: -1;
+}
+
+
+/* CSS for larger screens */
+nav ul {
+    padding-right: 10px;
+    padding-top: 10px;
+    color: white;
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: orange;
+}
+
+
+#LogOutBtn {
+    margin-left: 800px;
+}
+
+.search__input {
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 5px 20px;
+    width: 200px;
+    height: 30px;
+    outline: none;
+    font-size: 14px;
+}
+
+.welcome:hover{
+    color: #feac40;
+    cursor: pointer;
+}
+
+
+
+.search__input::placeholder {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.search__input:focus {
+    border-color: #feac40; 
+    background-color: #000000; 
+    color: #ffac40; 
+}
+
+
+#LogOutBtn {
+    background: none;
+    border: none;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 200px;
+    color: #ffffff;
+}
+
+#LogOutBtn:hover{
+    color: #feac40;
+}
+
+
+/*-------------Main-------------------*/
+
+.Main h1{
+
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 200px;
+    font-family: "Karantina", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 300px;
+}
+
+.categories{
+    display: flex;
+    justify-content: center;
+    gap: 350px;
+    margin-top: 250px;
+
+    
+}
+
+.categories img{
+
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+  
+}
+
+
+.categories p{
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    
+}
+
+
+
+
+@keyframes flying {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.logo {
+    color: #FFFFFF;
+    margin-left: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    animation: flying 2s infinite;
+}
+
+.flying-text {
+    margin-top: 10px;
+    color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    animation: flying 2s infinite;
+    cursor: pointer;
+}
+
+
+
+/*--------------------About----------------------*/
+.bg{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 250%;
+    position: absolute;
+    z-index: -1;
+    margin-bottom: 50px;
+}
+
+.About{
+    display: flex;
+}
+
+.About img{
+    width: 350px;
+    height: 500px;
+    border-radius: 25px;
+    margin-top: 80px;
+    margin-left: 50px;
+    object-fit: cover;
+}
+
+.text-content { /* Add this rule */
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.About h2{
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.About p{
+    margin-top: 20px; /* Adjust this value as needed */
+    color: #ffffff62;
+    height: 198px; /* Adjust this value as needed */
+    overflow-y: scroll; /* Add this line */
+    text-align: justify;
+}
+
+.About p::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+    
+}
+
+.About p::-webkit-scrollbar-track {
+    background: #ffffff62; /* Color of the track */
+    border-radius: 10px;
+    
+}
+
+.About p::-webkit-scrollbar-thumb {
+    background: #ffffff; /* Color of the thumb */
+    border-radius: 10px;
+}
+
+.About p::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 82, 28, 1); /* Color of the thumb on hover */
+}
+
+
+.list{
+    display: flex;
+    gap: 50px;
+}
+
+.list h4 a {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+   position: relative;
+   top: 50px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.list h4 a:hover{
+
+    color: rgba(255, 82, 28, 1);
+}
+
+/*----------------Places ---------------------------*/
+
+.Place h1{
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.Place .image-container {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    height: 400px;
+    margin: 50px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.Place .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.Place .image-container:hover img {
+    opacity: 0.5;
+}
+
+.Place .image-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.Place .image-container:hover .image-info {
+    opacity: 1;
+}
+
+
+
+#Appbtn {
+    background: none;
+    border: none;
+   
+    cursor: pointer;
+    padding: 0;
+    color: #ffffff;
+}
+
+#Appbtn:hover{
+    color: #feac40;
+}
+
+/*-----------------------Want-----------------*/
+
+@keyframes moveRight {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(710%); }
+}
+
+.video video {
+    position: absolute;
+    width: 250px;
+    mix-blend-mode: screen;
+    margin-top: 250px;
+    animation: moveRight 20s linear infinite; /* Add this line */
+}
+
+
+
+.Toursit h1{
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding-top: 100px;
+}
+
+@keyframes fly {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.arrow {
+    color: #FFFFFF;
+    margin-top: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    animation: fly 1s infinite; /* Add this line */
+}
+
+.Toursit a{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    animation: fly 1s infinite; /* Add this line */
+}
+
+.Toursit a:hover{
+    color: rgba(255, 82, 28, 1);
+    transition: color 0.5s ease-in-out; /* Add this line */
+}
+
+
+.Contact_info h1{
+    color: #686868;
+    
+    margin-top: 100px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.Contact_info p{
+    color: #686868;
+    margin-top: 100px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+/* Add this for the hamburger menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.hamburger-menu div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #ffffff;
+}
+
+
+/*-------------footer-----------*/
+
+
+
+    
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    background-color: #000; /* Set footer background to black */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.table {
+    background-color: transparent; /* Make table background transparent */
+}
+
+
+   
+
+ 
+
+
+
+
+
+/* CSS for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #LogOutBtn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .search__input {
+        width: 100%;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+}
