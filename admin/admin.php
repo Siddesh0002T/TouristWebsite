@@ -38,8 +38,10 @@ if(!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin']!=true){
                     </li>
                 </ul>
                 <div class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search"class="dt-input">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  <button  class="btn btn-outline-success"style="margin-right:10px;" type="button" > <?php 
+        echo "Welcome ".$_SESSION['auname'] ."!";
+        ?></button>               
+                  <button class="btn btn-outline-danger" type="button" onclick="location.href='adminlogout.php'" >Logout</button>
                 </div>
             </div>
         </div>
@@ -71,9 +73,16 @@ if(!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin']!=true){
                         </tr>
                     </thead>
                     <tbody>
-                       <td></td>
-                       <td></td>
-                       <td></td>
+                        <tr>
+                       <td><h3><b>Manage User</b></h3></td>
+                       <td>Manage User edit,block/unblock,and delete user  from database</td>
+                       <td><button class="btn btn-outline-primary" type="button" onclick="location.href='manageuser.php'" >Go !</button></td>
+                       </tr>
+                       <tr>
+                       <td><h3><b>Create User</b></h3></td>
+                       <td>Create User in Database</td>
+                       <td><button class="btn btn-outline-primary" type="button" onclick="location.href='manageuser.php'" >Go !</button></td>
+                       </tr>
                     </tbody>
                 </table>
             </div>
@@ -94,6 +103,10 @@ if(!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin']!=true){
      /*    $(document).ready(function() {
             $('#adminFunction').DataTable();
         });*/
+      /*  
+function logOut () {
+window.location = 'adminlogout.php';
+}*/
     </script>
 </body>
 </html>
