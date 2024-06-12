@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $insert = false;
         if ($uname!= "") {
             $stmt = $conn->prepare("UPDATE `tuser` SET `uname` =?, `uemail` =? WHERE `tuser`.`id` =?");
-            $stmt->bind_param("ssi", $uname, $uemail, $idS);
+            $stmt->bind_param("ssi", $uname, $uemail, $id);
             if ($stmt->execute()) {
                 //echo '<p>New record created successfully  </p>';
                 $insert = true;
@@ -192,7 +192,7 @@ myModal.addEventListener('shown.bs.modal', () => {
                 console.log(uname,uemail);
                 unameEdit.value = uname;
                 uemailEdit.value = uemail;
-                snoEdit.value = e.target.sno;
+                snoEdit.value = e.target.id;
                 console.log("Btn Sno : ",e.target.id);
                 $('#editModal').modal('toggle');
         })
