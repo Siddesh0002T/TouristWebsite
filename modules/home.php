@@ -152,7 +152,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                 <div></div>
             </div>
         <ul>
-            <li><a href="">History</a></li>
+            <li><a href="hisofnas.html">History</a></li>
             <li><a href="">Destination</a></li>
             <li><a href="">Images</a></li>
             <li class='welcome'> <?php 

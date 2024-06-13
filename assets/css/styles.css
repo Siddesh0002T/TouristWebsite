@@ -574,11 +574,18 @@ nav ul li a:hover{
     height: 100%;
     object-fit: cover;
     transition: opacity 0.3s ease;
+    transition: transform 0.5s ease;
+    
 }
+
 
 .Place .image-container:hover img {
     opacity: 0.5;
+    transform: scale(1.1);
 }
+
+
+  
 
 .Place .image-info {
     position: absolute;
