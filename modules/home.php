@@ -383,6 +383,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         </footer>
     
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../assets/js/logout.js"></script>
     <script>
         $(document).ready(function() {
             $('.hamburger-menu').click(function() {
