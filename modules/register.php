@@ -42,7 +42,7 @@ if(isset($_POST['register'])){
 }
 ?>
 <!DOCTYPE html>
-< lang="en">
+<html lang="en">
 <head>
   <!-- Design by foolishdeveloper.com -->
     <title>Welcome to register</title>
@@ -85,3 +85,4 @@ if(isset($_POST['register'])){
         <a href="login.php">login</a>
     </form>
 </body>
+</html>

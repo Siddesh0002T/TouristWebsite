@@ -76,7 +76,7 @@ if(!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin']!=true){
                     <tr>
                        <td><h3><b>Create User</b></h3></td>
                        <td>Create User in Database</td>
-                       <td><button class="btn btn-outline-primary" type="button" onclick="location.href='manageuser.php'" >Go !</button></td>
+                       <td><button class="btn btn-outline-primary" type="button" onclick="location.href='adduser.php'" >Go !</button></td>
                        </tr>
                         <tr>
                        <td><h3><b>Manage User</b></h3></td>
