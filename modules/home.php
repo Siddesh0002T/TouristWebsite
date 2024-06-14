@@ -153,8 +153,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
             </div>
         <ul>
             <li><a href="hisofnas.html">History</a></li>
-            <li><a href="">Destination</a></li>
-            <li><a href="">Images</a></li>
+            <li><a href="Destination.html">Destination</a></li>
+            <li><a href="imgage.html">Images</a></li>
             <li class='welcome'> <?php 
         echo "".$_SESSION['uname'] ."!";
         ?></li> 
