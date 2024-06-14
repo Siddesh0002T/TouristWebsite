@@ -7,9 +7,31 @@
 </head>
 
 <body>
+        
+    <section class="Bar">
         <div class="imgage">
-            <img src="../assets/img/rajesh-kumar-woQ5oLBrhw8-unsplash.jpg" alt="">
+            <img src="../assets/img/pexels-pixabay-235985.jpg" alt="">
         </div>
+        
+       <nav>
+       <div class="hamburger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="">Destination</a></li>
+            <li><a href="">Images</a></li>
+            <li class='welcome'> <?php 
+        echo "".$_SESSION['uname'] ."!";
+        ?></li> 
+            <li><input class="search__input" type="text" placeholder="Search"></li>
+            <li><button onclick=""  type="button" id="LogOutBtn">Logout</button></li>
+        </ul>
+       </nav>
+
+    </section>
 
         <div class="title">
             <h1>History Of Nashik</h1><br><br><br>
