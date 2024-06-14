@@ -5,6 +5,9 @@ Tourist Website for Nashik turists
 <b>Username :</b> Admin <br>
 <b>Password :</b> Admin@123
 
+# APIs
+https://api.web3forms.com/submit
+
 # Collaborators
 <table>
  <tbody>
