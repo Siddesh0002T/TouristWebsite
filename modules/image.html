@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/img.css">
+    
+
+</head>
+<body>
+    <section class="Bar">
+        <div class="imgage">
+            <img src="../assets/img/pexels-pixabay-235985.jpg" alt="">
+        </div>
+        
+       <nav>
+       <div class="hamburger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="Destination.html">Destination</a></li>
+            <li><a href="">Images</a></li>
+            <li class='welcome'> <?php 
+        echo "".$_SESSION['uname'] ."!";
+        ?></li> 
+            <li><input class="search__input" type="text" placeholder="Search"></li>
+            <li><button onclick=""  type="button" id="LogOutBtn">Logout</button></li>
+        </ul>
+       </nav>
+
+    </section>
+
+    <h4>Upload Images</h4>
+
+    <input type="file" id="upload" onchange="previewFile()" multiple>
+    <div class="gallery">
+        <img src="https://images.herzindagi.info/image/2023/Mar/nashik-temples.jpg" alt="Random Image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRWZAYVOuVcfSEEtA35pogVSEjkfNUWCPtDw&s" alt="Random Image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDi3i_cc9hPNUG1oSKUirT25P7qO9GePfkJQ&s" alt="Random Image">
+        <img src="https://lp-cms-production.imgix.net/2019-06/GettyImages-148701497_high.jpg?auto=format&fit=crop&ar=1:1&q=75&w=1200" alt="Random Image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt9zUVl4gcnm4ymUoDkWyEeQ8byXo565V7TQ&s" alt="Random Image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5mJz1p80bXi0Zqyz0e-XDZe5xBe-d_35rww&s" alt="Random Image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzq-NNEhVeht6RU795mNFQvKDqf3dOIO8sLw&s" alt="Random Image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsRGtV-em3Jnp8sr2C9xq6u9oeoQU43uc4tA&s" alt="Random Image">
+    </div>
+    <script>
+        function previewFile() {
+            var gallery = document.querySelector('.gallery');
+            var files = document.querySelector('input[type=file]').files;
+
+            function readAndPreview(file) {
+                if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+                    var reader = new FileReader();
+
+                    reader.addEventListener("load", function () {
+                        var image = new Image();
+                        image.src = this.result;
+                        gallery.appendChild(image);
+                    }, false);
+
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            if (files) {
+                [].forEach.call(files, readAndPreview);
+            }
+        }
+    </script>
+</body>
+</html>

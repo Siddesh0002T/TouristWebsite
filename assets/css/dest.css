@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(20, 20, 20);
+}
+
+
+.Map{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.Bar {
+    position: relative;
+}
+
+
+/* CSS for larger screens */
+nav ul {
+    padding-right: 10px;
+    padding-top: 10px;
+    color: white;
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: orange;
+}
+
+
+#LogOutBtn {
+    margin-left: 800px;
+}
+
+.search__input {
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 5px 20px;
+    width: 200px;
+    height: 30px;
+    outline: none;
+    font-size: 14px;
+}
+
+.welcome:hover{
+    color: #feac40;
+    cursor: pointer;
+}
+
+
+
+.search__input::placeholder {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.search__input:focus {
+    border-color: #feac40; 
+    background-color: transparent;
+    color: #ffac40; 
+}
+
+
+#LogOutBtn {
+    background: none;
+    border: none;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 200px;
+    color: #ffffff;
+}
+
+#LogOutBtn:hover{
+    color: #feac40;
+}

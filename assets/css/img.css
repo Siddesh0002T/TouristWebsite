@@ -1,0 +1,170 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url();
+    margin: 0;
+   
+}
+
+.Bar {
+    position: relative;
+}
+
+.Bar img {
+    position: absolute;
+    top: -80px;
+    
+    /* This will make the image cover the entire container */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* This makes the image responsive */
+    max-width: 100%;
+    height: auto;
+
+    /* This will place the image behind other elements */
+    z-index: -1;
+}
+
+
+/* CSS for larger screens */
+nav ul {
+    padding-right: 10px;
+    padding-top: 10px;
+    color: white;
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: orange;
+}
+
+
+#LogOutBtn {
+    margin-left: 800px;
+}
+
+.search__input {
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 5px 20px;
+    width: 200px;
+    height: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.welcome:hover{
+    color: #feac40;
+    cursor: pointer;
+}
+
+
+
+.search__input::placeholder {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.search__input:focus {
+    border-color: #feac40; 
+    background-color: transparent; 
+    color: #ffac40; 
+}
+
+
+#LogOutBtn {
+    background: none;
+    border: none;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 200px;
+    color: #ffffff;
+}
+
+#LogOutBtn:hover{
+    color: #feac40;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 100px;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+h4{
+    font-family: Arial, Helvetica, sans-serif ;
+    color: white;
+}
+
+
+
+/* CSS */
+#upload {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #ffb554;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#upload {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+#upload {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
