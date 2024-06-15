@@ -311,13 +311,13 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <h3 style="margin-top: 50px;">Contact Us</h3>
     <input type="hidden" name="access_key" value="88c2995c-6a9d-41c4-ba16-a3bc06a8bbdb">
     <label for="register-username">Full Name</label>
-    <input type="text" placeholder="Enter Your Full Name" id="register-username" name="uname" required>
+    <input type="text" placeholder="Enter Your Full Name" id="register-username" name="Name" required>
   
     <label for="register-email">Email</label>
-    <input type="email" placeholder="Enter Your Email" id="register-email" name="uemail" required>
+    <input type="email" placeholder="Enter Your Email" id="register-email" name="Email" required>
 
     <label for="register-password">Message</label>
-    <textarea class="textArea" type="text" placeholder="Message" style=" display: block; height: 50px; width: 100%; background-color: rgba(255,255,255,0.07); border-radius: 3px; padding: 0 10px; margin-top: 8px; font-size: 14px; font-weight: 300;" rows="10" id="msg" name="msg" required></textarea>
+    <textarea class="textArea" type="text" placeholder="Message" name="Message" style=" display: block; height: 50px; width: 100%; background-color: rgba(255,255,255,0.07); border-radius: 3px; padding: 0 10px; margin-top: 8px; font-size: 14px; font-weight: 300;" rows="10" id="msg" name="msg" required></textarea>
 
     <button type="submit" style="margin-top: 30px;" name="Send Message">Message</button>
     <button style="margin-top: 30px;" name="close" onclick="closeForm()">close</button>
