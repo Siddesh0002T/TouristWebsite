@@ -1,3 +1,7 @@
+# Project State
+Project is under Devlopment
+if you setup project you get some errors 
+
 # TouristWebsite
 Tourist Website for Nashik turists 
 
