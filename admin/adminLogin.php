@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <?php if (isset($showError)) { ?>
             <p style="color: red;"><?php echo $showError; ?></p>
         <?php } ?>
-        <label for="username">Email</label>
+        <label for="username">Username</label>
         <input type="text" placeholder="Username" id" id="username" name="auname" required>
 
         <label for="password">Password</label>
