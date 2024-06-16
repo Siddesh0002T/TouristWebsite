@@ -1,9 +1,16 @@
+# Project State
+Project is under Devlopment
+if you setup project you get some errors 
+
 # TouristWebsite
 Tourist Website for Nashik turists 
 
 # Admin 
 <b>Username :</b> Admin <br>
 <b>Password :</b> Admin@123
+
+# APIs
+https://api.web3forms.com/submit
 
 # Collaborators
 <table>

@@ -132,14 +132,19 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=REM:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    
+<link rel="stylesheet" href="../assets/css/widgetContact.css">
 
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
+  <path d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"/>
+</svg>
+<style>
+   body{
+    
+   }
 </style>
 </head>
-<style>
-    
-</style>
-<body>
+
+<body id="bggg">
 
 
     <section class="Bar">
@@ -298,6 +303,26 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         <div class="content">
             <!-- Your main content goes here -->
         </div>
+        <button class="open-button" onclick="openForm()">Contact Us <i class='far fa-comment'></i></button>
+<!-- Contact Form Widget Here -->
+
+<div class="form-popup" id="myForm">
+<form action="https://api.web3forms.com/submit" method="POST" class="form-container">
+    <h3 style="margin-top: 50px;">Contact Us</h3>
+    <input type="hidden" name="access_key" value="88c2995c-6a9d-41c4-ba16-a3bc06a8bbdb">
+    <label for="register-username">Full Name</label>
+    <input type="text" placeholder="Enter Your Full Name" id="register-username" name="Name" required>
+  
+    <label for="register-email">Email</label>
+    <input type="email" placeholder="Enter Your Email" id="register-email" name="Email" required>
+
+    <label for="register-password">Message</label>
+    <textarea class="textArea" type="text" placeholder="Message" name="Message" style=" display: block; height: 50px; width: 100%; background-color: rgba(255,255,255,0.07); border-radius: 3px; padding: 0 10px; margin-top: 8px; font-size: 14px; font-weight: 300;" rows="10" id="msg" name="msg" required></textarea>
+
+    <button type="submit" style="margin-top: 30px;" name="Send Message">Message</button>
+    <button style="margin-top: 30px;" name="close" onclick="closeForm()">close</button>
+  </form>
+</div>
 
         <footer class="text-white text-center text-lg-start bg-dark mt-auto">
             <!-- Grid container -->
@@ -391,7 +416,19 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
             });
         });
     </script>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+ // document.getElementsById("bggg").style.filter = "brightness("50"%)";
+  //image.style.filter = "brightness(20%)";
 
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
 </html>
 
