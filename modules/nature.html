@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .Bar {
+    position: relative;
+}
+
+.Bar img {
+    position: absolute;
+    top: -80px;
+    
+    /* This will make the image cover the entire container */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* This makes the image responsive */
+    max-width: 100%;
+    height: auto;
+
+    /* This will place the image behind other elements */
+    z-index: -1;
+}
+
+
+/* CSS for larger screens */
+nav ul {
+    padding-right: 10px;
+    padding-top: 10px;
+    color: white;
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: orange;
+}
+
+
+#LogOutBtn {
+    margin-left: 800px;
+}
+
+.search__input {
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 5px 20px;
+    width: 200px;
+    height: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.welcome:hover{
+    color: #feac40;
+    cursor: pointer;
+}
+
+
+
+.search__input::placeholder {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.search__input:focus {
+    border-color: #feac40; 
+    background-color: #000000; 
+    color: #ffac40; 
+}
+
+
+#LogOutBtn {
+    background: none;
+    border: none;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 200px;
+    color: #ffffff;
+}
+
+#LogOutBtn:hover{
+    color: #feac40;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(../assets/img/pexels-pixabay-235985.jpg);
+        }
+        .nature-card {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .nature-card img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+        .nature-card h2 {
+            margin: 0;
+        }
+        .nature-card p{
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <section class="Bar">
+        
+        
+       <nav>
+       <div class="hamburger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="Destination.html">Destination</a></li>
+            <li><a href="image.html">Images</a></li>
+            <li class='welcome'> <?php 
+        echo "".$_SESSION['uname'] ."!";
+        ?></li> 
+            <li><input class="search__input" type="text" placeholder="Search"></li>
+            <li><button onclick=""  type="button" id="LogOutBtn">Logout</button></li>
+        </ul>
+       </nav>
+
+    </section>
+    <div class="nature-card">
+        <img src="https://media2.thrillophilia.com/images/photos/000/151/501/original/1556289047_rn5mosblovtftvzxb2wo.jpg?w=753&h=450&dpr=1.0" alt="Pandav Leni">
+        <h2>Harihar Fort</h2>
+        <p>Located 48 km from Igatpuri, Harihar fort is an important fort of Nashik district. The fort captures the attention of the visitors because of its peculiar rock-cut steps and its one of the famous Nashik tourist places.
+
+            The fort is very old and it mostly is in ruins at present except for a storage house and a few rock-cut cisterns. The fort can be accessed from two base villages namely, Rakshewadi and Nirgudpada.
+            
+            Location: The fort is located close to Nirgudpada village, Nashik, 422212, Maharashtra
+            
+            Timing: The fort is open to visitors from 7 am to 6 pm.
+            
+            Entry fee: There is no entry fee for visiting Harihar fort.    </p>
+    </div>
+    <div class="nature-card">
+        <img src="https://media2.thrillophilia.com/images/photos/000/151/532/original/1556344963_shutterstock_1261760314.jpg?w=753&h=450&dpr=1.0" alt="Anjneri Hill">
+        <h2>
+            Ramkund</h2>
+        <p>A sacred bathing ghat in Nashik, Ramkund is situated at the bank of the Godavari River. The place is considered to be the holiest place in Nashik and is surrounded with folklores and various mythological stories.
+
+            Every year, thousands of Hindus visit the Kund to pray and take bath.
+            
+            Location: Ram Kund is located near Kapileshwar Temple, Panchvati, Nashik, Maharashtra, 422003.
+            
+            Timing: There is no fixed timing for visiting Ram Kund.
+            
+            Entry fee: No entry fee is required for visiting Ram Kund.</p>
+    </div>
+    
+    <div class="nature-card">
+        <img src="https://media2.thrillophilia.com/images/photos/000/151/484/original/1603981771_SulaVineyardswithWineTastingDayTourfromMumbai.jpg?w=753&h=450&dpr=1.0" alt="Pandav Leni">
+        <h2>Sula Vineyard</h2>
+        <p>A fine winery and vineyard Located in the beautiful city of Nashik, the Sula Vineyard is the very first winery established in the city and it is one of the famous places to visit in Nashik. The history of the vineyard goes back to 1999, when it initially began operations. 
+
+            The place offers wine tasting as well as exciting tours to its visitors throughout the year. Visitors can enjoy a beautiful stay and great food at the restaurants and resort located at the vineyard property.
+            
+            Location: Sula vineyards is located at Gat 36/2, Govardhan Village, Off Gangapur-Savargaon road, Nashik, Maharashtra, 422222.
+            
+            Timings: The vineyard stays open from 11:30 am to 10:30 pm all days of the week.
+            
+            Entry fee: There is no entry fee for the Vineyard.</p>
+    </div>
+    <div class="nature-card">
+        <img src="https://media2.thrillophilia.com/images/photos/000/151/497/original/1556287916_someshwar-water-fall-ambedkar-nagar-nashik-tourist-attraction-xxpclzd2dx.jpg?w=753&h=450&dpr=1.0" alt="Anjneri Hill">
+        <h2>
+            Dudhsagar Falls, Nasik</h2>
+        <p>Dudhsagar Falls, also known as Someshwar Falls, is one of the most captivating Nashik tourist places that you can visit.Just 9 km away from Nashik Central Bus Station, the waterfall has a height of 10 meters.
+
+            Best time to visit the Dudhsagar Falls is during monsoon, when everything around the place becomes more beautiful and attractive. Dudhsagar Waterfall is a popular hangout in the area and is one of the most common places to visit in Nashik.
+            
+            Location: Dudhsagar Falls is located at Ambedkar Nagar, Nashik, Maharashtra.
+            
+            Timings: The place is open to visitors from 6 am to 9 pm every day.
+            
+            Entry Fee: There is no entry fee for Dudhsagar Falls.
+            </p>
+    </div>
+    <div class="nature-card">
+        <img src="https://media2.thrillophilia.com/images/photos/000/084/415/original/1556345975_Vani-2014-24.jpg?w=753&h=450&dpr=1.0" alt="Pandav Leni">
+        <h2>Saptashrungi</h2>
+        <p>The Saptshrungi Garh is a holy place situated approximately at a distance of 60 KM from Nashik. According to the mythology, it is an abode of Goddess Bhagawati. Innumerable travelers and pilgrims visit Saptshrungi every year. The name Saptshrungi means seven mountain pinnacles. There are around 108 water reservoirs on this Mountain, which are known as Kundas and it is one of the popular places to visit in Nashik.
+
+            One of the events from the legendary Ramayana states that Hanuman carried the herbal medicine for wounded Laxmana from this hill. The best time to visit this place is after the monsoon season. It is not only a divine destination but also a picnic spot.
+            
+            Location: Saptashrungi Garh Rd, Saptashurngi, Maharashtra 422215
+            
+            Timings: 6 AM to 6 PM
+            
+            Entry fee: None.</p>
+    </div>
+    <div class="nature-card">
+        <img src="https://media2.thrillophilia.com/images/photos/000/124/474/original/1514026707_maxresdefault.jpg?w=753&h=450&dpr=1.0" alt="Anjneri Hill">
+        <h2>Gangapur Dam</h2>
+        <p>Amongst all the places to visit in Nashik, the Gangapur Dam is a must. Approximately 10 KM away from the main city of Nashik is the Gangapur Dam, a highly fascinating tourist spot. It is situated on the banks of the sacred Godavari River. Being constructed in the year 1954, it is built in conventional style using stones, clay, mud, and sand.
+
+            The garden near the Dam is an ideal picnic spot, amidst a charismatic landscape. Visit this place with friends and family to admire Mother Nature and to also watch the different species of birds here. Moreover, if you love photography, then surely let your cameras capture this immaculate beauty.
+            
+            Location: Godavari River, Nashik. 
+            
+            Timings: All day.
+            
+            Entry fee: None. </p>
+    </div>
+</body>
+</html>

@@ -154,7 +154,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         <ul>
             <li><a href="hisofnas.html">History</a></li>
             <li><a href="Destination.html">Destination</a></li>
-            <li><a href="imgage.html">Images</a></li>
+            <li><a href="image.html">Images</a></li>
             <li class='welcome'> <?php 
         echo "".$_SESSION['uname'] ."!";
         ?></li> 
@@ -171,14 +171,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 
         <div class="categories">
 
-    <a href="holy-places.php">
+    <a href="holy.html">
         <div class="temple">
             <img src="../assets/img/Temple1.jpg" alt="" class="small-image">
             <p>Holy Places</p>
         </div>
     </a>
 
-    <a href="nature.php">
+    <a href="nature.html">
         <div class="nature">
             <img src="../assets/img/Nature1.jpg" alt="" class="small-image">
             <p>Nature</p>
@@ -192,14 +192,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     </div>
 
 
-    <a href="food.php">
+    <a href="https://www.tripadvisor.in/Restaurants-g303883-Nashik_Nashik_District_Maharashtra.html">
         <div class="food">
             <img src="../assets/img/food.jpg" alt="" class="small-image">
             <p>Food</p>
         </div>
     </a>
 
-    <a href="hotel.php">
+    <a href="https://www.tripadvisor.in/Hotels-g303883-Nashik_Nashik_District_Maharashtra-Hotels.html">
         <div class="hotel">
             <img src="../assets/img/hotel.jpg" alt="" class="small-image">
             <p>Hotel</p>

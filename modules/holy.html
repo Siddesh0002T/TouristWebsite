@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .Bar {
+    position: relative;
+}
+
+.Bar img {
+    position: absolute;
+    top: -80px;
+    
+    /* This will make the image cover the entire container */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* This makes the image responsive */
+    max-width: 100%;
+    height: auto;
+
+    /* This will place the image behind other elements */
+    z-index: -1;
+}
+
+
+/* CSS for larger screens */
+nav ul {
+    padding-right: 10px;
+    padding-top: 10px;
+    color: white;
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: orange;
+}
+
+
+#LogOutBtn {
+    margin-left: 800px;
+}
+
+.search__input {
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 5px 20px;
+    width: 200px;
+    height: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.welcome:hover{
+    color: #feac40;
+    cursor: pointer;
+}
+
+
+
+.search__input::placeholder {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.search__input:focus {
+    border-color: #feac40; 
+    background-color: #000000; 
+    color: #ffac40; 
+}
+
+
+#LogOutBtn {
+    background: none;
+    border: none;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 200px;
+    color: #ffffff;
+}
+
+#LogOutBtn:hover{
+    color: #feac40;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(../assets/img/pexels-pixabay-235985.jpg);
+        }
+        .nature-card {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .nature-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .nature-card h2 {
+            margin: 0;
+        }
+        .nature-card p{
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <section class="Bar">
+        
+        
+       <nav>
+       <div class="hamburger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="Destination.html">Destination</a></li>
+            <li><a href="image.html">Images</a></li>
+            <li class='welcome'> <?php 
+        echo "".$_SESSION['uname'] ."!";
+        ?></li> 
+            <li><input class="search__input" type="text" placeholder="Search"></li>
+            <li><button onclick=""  type="button" id="LogOutBtn">Logout</button></li>
+        </ul>
+       </nav>
+
+    </section>
+    <div class="nature-card">
+        <img src="https://cdn.s3waas.gov.in/s3b3967a0e938dc2a6340e258630febd5a/uploads/2018/03/2018030968-300x225.jpg" alt="Pandav Leni">
+        <h2>Shree Kalaram Mandir</h2>
+        <p>Kalaram Mandir is situated within the Panchvati area of Nashik City. This temple is situated at a distance of 3 km from Central Bus.
+
+            City buses and auto rickshaws are available from various corners of the city to reach the temple. This temple is supposed to stand on the spot where Lord Ram lived during hid exile. It was built in 1782 by Sardar Rangrao Odhekar on the site of an old wooden temple. The work is said to have lasted twelve years, 2000 persons being daily employed. It is one of the finest modern temples of Ramji in western India. The temple has a seventeen feet high wall of plain dressed stone which surrounds a well kept enclosure 245 feet long and 105 broad. It has seperate sabhamandap which is 75’*31’’*12 which is open from all sides. The temple has standing images of Lord Rama, Sita, Laxmana are of black stone and around 2 feet height. The Ramnavami festival is celebrated in Chaitra (March-April).    </p>
+    </div>
+    <div class="nature-card">
+        <img src="https://cdn.s3waas.gov.in/s3b3967a0e938dc2a6340e258630febd5a/uploads/2018/03/2018030975-300x225.jpg" alt="Anjneri Hill">
+        <h2>
+            Khandoba Temple</h2>
+        <p>This temple is situated on small hill in Deolali Cantonment area.
+
+            Shri Khandoba Maharaj is an incarnation of Lord Shiva and this temple dedicated to him is reportedly over 500 years (five hundred) old. As per mythology, the incarnation of Lord Shiva into Shri Khandoba is because two brothers amongst the demons Malla Daitya and Mani Daitya pleased Lord Shiva with their prayers and obtained his blessings that nobody on earth could kill them. Brothers after getting the boon from Lord Shiva however became power drunk and started harassing the common people, saints and sages. This could not be tolerated by Lord Shiva and he himself incarnated as Shri Khandoba and killed both the demons. After killing them, Lord Shiva relaxed on this hill and hence this temple is called ‘Vishramgadh’. The hill is popularly known as Khandobachi Tekadi.</p>
+    </div>
+    
+    <div class="nature-card">
+        <img src="https://cdn.s3waas.gov.in/s3b3967a0e938dc2a6340e258630febd5a/uploads/2018/03/2018030924-300x225.jpg" alt="Pandav Leni">
+        <h2>Kavnai -Kapildhara Tirtha</h2>
+        <p>Nashik City in Igatpuri Taluka Bus services are not so developed therefore private vehicle is required to visit this place. Nearest Railway station is Igatpuri at a distance of approximately 12 km by road.
+
+            It is said that Sant Sri Gajanan Maharaj did meditation in this area. It has serene nature. It is situated at the foot of Kawanai fort . Kapildhara tirtha has various temples with adjacentMata Kamakshi temple. A natural aquifer flowing throughout the year is considered sacred,</p>
+    </div>
+    <div class="nature-card">
+        <img src="https://cdn.s3waas.gov.in/s3b3967a0e938dc2a6340e258630febd5a/uploads/2018/03/2018030990-300x225.jpg" alt="Anjneri Hill">
+        <h2>
+            Kushavart Tirtha-Trimbakeshwar</h2>
+        <p>Kushavart Tirtha is situated at the heart of Trimbakeshwar town 400 mts away from Trimbakeshwar Jyotirlinga temple.
+
+            This 21 ft deep Kund was built in 1750 having natural aquifers. It is said to be the place from where sacred river Godavari remerges after disappearing at Bramhagiri hills, and hence the superior holiness of this Tirtha.
+            </p>
+    </div>
+    <div class="nature-card">
+        <img src="https://cdn.s3waas.gov.in/s3b3967a0e938dc2a6340e258630febd5a/uploads/2018/03/2018030995-300x225.jpg" alt="Pandav Leni">
+        <h2>Mangi Tungi Temple</h2>
+        <p>from Nashik ,located in Satana Taluka. Mangi is the western pinnacle which is 4,343 ft high above sea level andTungi is the eastern pinnacle which is 4,366 ft high above sea level.
+
+            Mangi Tungi is a famous holy place for pilgrimage. This is a Siddha Kshetra where Ram, Hanuman, Sugriva, Nal, Neel, Mahaneel, Gava, Gavaksha and so many others, Total 99 Carores of ascetics attained salvation full & final freedom from world and went to Siddha Shila or Moksha, from where no one returns to the world and enjoys the internal spiritual bliss for infinite time. This Holy place is also related to Lord Ram & Sita, Lord Krishna & his elder brother Balram. Bhilwadi is the base village of Mangi-Tungi.</p>
+    </div>
+    <div class="nature-card">
+        <img src="https://cdn.s3waas.gov.in/s3b3967a0e938dc2a6340e258630febd5a/uploads/2018/03/2018030955-300x225.jpg" alt="Anjneri Hill">
+        <h2>Balaji Temple</h2>
+        <p>Nashik has two Balaji temples ,old is located near the banks of Godavari in old city while new Balaji Temple is located on Gangapur road near shri Someshwar Mandir Temple .
+
+            State transport buses are available which the cheapest mode of transportation in Nashik. Balaji Temple is 12 kms away from Central Bus Stand. It is also believed that Shri Balaji Maharaj saves His devotees from unfavorable grahadashas (planetary configurations) </p>
+    </div>
+</body>
+</html>
