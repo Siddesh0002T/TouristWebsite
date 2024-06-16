@@ -49,6 +49,7 @@ if(!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin']!=true){
     
          <div class="container">
         <div class="row">
+ 
         <hr>
             <hr>
             <hr>
@@ -61,7 +62,8 @@ if(!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin']!=true){
             <hr>
             <hr>
             <div class="col-md-12">
-
+               <h3>Users</h3>
+               <hr>
                 <table class="table" id="adminFunction">
                     <thead>
                         <tr>
@@ -81,6 +83,32 @@ if(!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin']!=true){
                         <tr>
                        <td><h3><b>Manage User</b></h3></td>
                        <td>Manage User edit,block/unblock,and delete user  from database</td>
+                       <td><button class="btn btn-outline-primary" type="button" onclick="location.href='manageuser.php'" >Go !</button></td>
+                       </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3>Admins</h3>
+               <hr>
+                <table class="table" id="adminFunction">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Use</th>
+                            <th scope="col">Button</th>
+                           
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                       <td><h3><b>Create Admin</b></h3></td>
+                       <td>Create Admin in Database</td>
+                       <td><button class="btn btn-outline-primary" type="button" onclick="location.href='adduser.php'" >Go !</button></td>
+                       </tr>
+                        <tr>
+                       <td><h3><b>Manage Admins</b></h3></td>
+                       <td>Manage Admin edit,block/unblock,and delete user  from database</td>
                        <td><button class="btn btn-outline-primary" type="button" onclick="location.href='manageuser.php'" >Go !</button></td>
                        </tr>
                     </tbody>
