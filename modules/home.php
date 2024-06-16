@@ -335,12 +335,13 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
-function openApplyForm() {+
+function openApplyForm() {
   document.getElementById("myApplyForm").style.display = "block";
 }
 
 function closeApplyForm() {
   document.getElementById("myApplyForm").style.display = "none";
+}
 </script>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
