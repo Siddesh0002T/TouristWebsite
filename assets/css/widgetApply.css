@@ -1,30 +1,14 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 150px;
-  height: 50px;
-}
-
 /* The popup form - hidden by default */
-.form-popup {
+.apply-form-popup {
   display: none;
   position: fixed;
   bottom: 0;
   right: 15px;
   width: 2000px; /* Added width */
-  height: 1000px; /* Added height */
+  height: 1200px; /* Added height */
   margin: 0; /* Added margin */
   z-index: 9;
 }
@@ -112,9 +96,9 @@ body{
     right: -30px;
     bottom: -80px;
 }
-form{
-    height: 650px;
-    width: 400px;
+.form-apply-body{
+    height: 1000px;
+    width: 500px;
     background-color: rgba(120, 113, 113, 0.389);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -206,4 +190,37 @@ textarea{
 }
 ::placeholder{
     color: #e5e5e5;
+}
+#employmentType{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.optionss{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+#gender{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
 }
