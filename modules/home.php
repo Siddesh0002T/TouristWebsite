@@ -7,6 +7,54 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 }
 
 ?>
+
+<?php
+$emailEx = false;
+$exists = false;
+// connect to database  
+include ("../config/db_connect.php");
+
+if (isset($_POST['apply'])) {
+    $emp_name = $_POST['emp_name'];
+    $emp_email = $_POST['emp_email'];
+    $emp_phone = $_POST['emp_phone'];
+    $emp_pass = $_POST['emp_pass'];
+    $emp_type = $_POST['emp_type'];
+    $emp_age = $_POST['emp_age'];
+    $emp_gender = $_POST['emp_gender'];
+
+    // Check if email already exists
+    $existsSql = "SELECT * FROM `emp` WHERE `emp_email` = ?";
+    $stmt = mysqli_prepare($conn, $existsSql);
+    // echo $stmt;
+    mysqli_stmt_bind_param($stmt, "s", $emp_email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $numExistRow = mysqli_num_rows($result);
+
+    if ($numExistRow > 0) {
+        $exists = true;
+    } else {
+        $exists = false;
+    }
+
+    if ($exists == false) {
+        $query = "INSERT INTO `emp` (`emp_id`, `emp_name`, `emp_email`, `emp_phone`,`emp_type`, `emp_age`, `emp_gender`, `emp_pass`, `emp_date`, `emp_status`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), 1);";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "sssssss", $emp_name, $emp_email, $emp_phone, $emp_type, $emp_age, $emp_gender, $emp_pass);
+        mysqli_stmt_execute($stmt);
+
+        if (mysqli_stmt_affected_rows($stmt) > 0) {
+            header("Location: gotologin.html");
+            exit();
+        } else {
+            echo "<p style='color:red'>Error registering user</p>";
+        }
+    } else {
+        $emailEx = "<p style='color:red'>Email already exists</p>";
+    }
+}
+?>
 <html lang="en">
 
 <head>
@@ -230,29 +278,32 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         <!-- Apply Form Widget Here -->
 
         <div class="apply-form-popup" id="myApplyForm">
-            <form action="" method="POST" class="form-container form-apply-body">
+            <form method="POST" class="form-container form-apply-body">
                 <h3 style="margin-top: 50px;">Apply</h3>
 
                 <label for="register-username">Full Name</label>
-                <input type="text" placeholder="Enter Your Full Name" id="register-username" name="Name" required>
+                <input type="text" placeholder="Enter Your Full Name" id="register-username" name="emp_name" required>
 
                 <label for="register-email">Email</label>
-                <input type="email" placeholder="Enter Your Email" id="register-email" name="Email" required>
+                <input type="email" placeholder="Enter Your Email" id="register-email" name="emp_email" required>
+
+                <label for="register-number">Contact No</label>
+                <input type="phone" placeholder="Enter Your Phone No." id="register-number" name="emp_phone" required>
 
                 <label for="register-password">Password</label>
-                <input type="password" placeholder="Create Your Password" id="register-password" name="Email" required>
+                <input type="password" placeholder="Create Your Password" id="register-password" name="emp_pass" required>
 
                 <label for="employmentType">Employment Type</label>
-                <select id="employmentType" name="employmentType">
+                <select id="employmentType" name="emp_type">
                     <option class="optionss" value="Full-time">Full-time</option>
                     <option class="optionss" value="Part-time">Part-time</option>
                 </select>
 
                 <label for="age">Age</label>
-                <input type="number" placeholder="Enter Your Age" name="age" id="age">
+                <input type="number" placeholder="Enter Your Age" name="emp_age" id="age">
              
                 <label for="gender">Gender</label>
-                <select id="gender" name="gender">
+                <select id="gender" name="emp_gender">
                     <option class="optionss" value="Male">Male</option>
                     <option class="optionss" value="Female">Female</option>
                 </select>
@@ -277,7 +328,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                             customer advocate, coordinator, and problem-solver. </p>
 
                         <!-- Job Apply Form Widget Here -->
-                        <button onclick="openApplyForm()" type="button" id="Appbtn">Apply</button>
+                        <button onclick="openApplyForm()" type="button" id="Appbtn" name="apply">Apply</button>
 
 
                         <div class="mt-4">
