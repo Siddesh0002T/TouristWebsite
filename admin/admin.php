@@ -109,7 +109,8 @@ if(!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin']!=true){
                         <tr>
                        <td><h3><b>Manage Admins</b></h3></td>
                        <td>Manage Admin edit,block/unblock,and delete user  from database</td>
-                       <td><button class="btn btn-outline-primary" type="button" onclick="location.href='manageuser.php'" >Go !</button></td>
+                       <td><button class="btn btn-outline-primary" type="button" onclick="location.href='manageadmin.php'" >Go !</button></td>
+                       
                        </tr>
                     </tbody>
                 </table>

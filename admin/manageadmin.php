@@ -10,10 +10,10 @@ $insert = false;
 include './config/db_connect.php';
 if(isset($_GET['delete'])){
     $sno = $_GET['delete'];
-    $stmt = $conn->prepare("DELETE FROM `tuser` WHERE `id` =?");
+    $stmt = $conn->prepare("DELETE FROM `admin` WHERE `id` =?");
     $stmt->bind_param("i", $sno);
     if ($stmt->execute()) {
-        echo "Record deleted successfully";
+        echo "admin deleted successfully";
     } else {
         echo "Error: ". $stmt->error;
     }
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Manageusers</title>
+    <title>Manage Admins</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="modal-content">
     <form action="manageuser.php" method="post">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="editModalLabel">Alter User</h1>
+        <h1 class="modal-title fs-5" id="editModalLabel">Alter Admin</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -72,14 +72,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label for="unameEdit" class="form-label">Name</label>
                         <input type="text" class="form-control" id="unameEdit" name="unameEdit" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="uemailEdit" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="uemailEdit" name="uemailEdit"  required>
-                    </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Alter User</button>
+        <button type="submit" class="btn btn-primary">Alter Admin</button>
       </div>
       </form>
     </div>
@@ -114,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <nav style="--bs-breadcrumb-divider: '>'; margin-left:20px;" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="admin.php">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Manage users</li>
+    <li class="breadcrumb-item active" aria-current="page">Manage Admin</li>
   </ol>
 </nav>
     <div class="container">
@@ -123,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <hr>
             <hr>
             <br>
-           <h1>Manage Users</h1>
+           <h1>Manage Admin</h1>
             <br>
             <hr>
             <hr>
@@ -134,28 +130,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <thead>
                         <tr>
                             <th scope="col">Sr.No.</th>
-                            <th scope="col">Name </th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Admin Name </th>
                             <th scope="col">Date And Time</th>
                             <th scope="col">Action</th>
-                            <th scope="col">Block/Unblock</th>
+                           
                         
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "SELECT * FROM tuser";
+                        $sql = "SELECT * FROM admin";
                         $result = mysqli_query($conn, $sql);
                         $sno = 0;
                         while ($row = mysqli_fetch_assoc($result)) {
                             $sno = $sno + 1;
                             echo "<tr>
                                     <td scope='row'>".$sno." </td>
-                                    <td>" . $row['uname'] . "</td>
-                                    <td>" . $row['uemail'] . "</td>
-                                    <td>" . $row['register_date'] . "</td>
+                                    <td>" . $row['auname'] . "</td>
+                          
+                                    <td>" . $row['date'] . "</td>
                                     <td><button class='btn btn-sm btn-primary edit' id=".$row['id'].">Edit</button> <button class='btn btn-sm btn-danger delete' id=d".$row['id'].">Delete</button></td>
-                                    <td>". $row['block_unblock'] ."</td>
+                                  
                                 </tr>";
                         }
                         ?>
@@ -196,10 +191,8 @@ myModal.addEventListener('shown.bs.modal', () => {
                 console.log("edit", );
                 tr = e.target.parentNode.parentNode;
                 uname = tr.getElementsByTagName("td")[1].innerText;
-                uemail = tr.getElementsByTagName("td")[2].innerText;
                 console.log(uname,uemail);
                 unameEdit.value = uname;
-                uemailEdit.value = uemail;
                 snoEdit.value = e.target.id;
                 console.log("Btn Sno : ",e.target.id);
                 $('#editModal').modal('toggle');
@@ -210,9 +203,9 @@ Array.from(deletes).forEach((element)=>{
     element.addEventListener("click", (e)=>{
         console.log("delete", );
         sno = e.target.id.substr(1,);
-        if(confirm("Delete User !")){
+        if(confirm("Delete Admin !")){
             console.log("yes");
-            window.location = 'manageuser.php?delete=' + sno;
+            window.location = 'manageadmin.php?delete=' + sno;
         }
         else{
             console.log("no");
