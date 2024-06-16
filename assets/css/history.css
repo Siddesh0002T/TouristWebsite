@@ -1,4 +1,4 @@
-body{
+body {
     background-color: rgb(46, 46, 46);
     margin: 0;
     padding: 0;
@@ -10,8 +10,8 @@ body{
 
 .Bar img {
     position: absolute;
-    
-    
+
+
     /* This will make the image cover the entire container */
     width: 100%;
     height: 100%;
@@ -48,7 +48,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     color: orange;
 }
 
@@ -69,7 +69,7 @@ nav ul li a:hover{
     font-size: 14px;
 }
 
-.welcome:hover{
+.welcome:hover {
     color: #feac40;
     cursor: pointer;
 }
@@ -82,9 +82,9 @@ nav ul li a:hover{
 }
 
 .search__input:focus {
-    border-color: #feac40; 
+    border-color: #feac40;
     background-color: transparent;
-    color: #ffac40; 
+    color: #ffac40;
 }
 
 
@@ -99,9 +99,10 @@ nav ul li a:hover{
     color: #ffffff;
 }
 
-#LogOutBtn:hover{
+#LogOutBtn:hover {
     color: #feac40;
 }
+
 .imgage img {
     /* Set the image to cover the full width of the container */
     width: 100vw;
@@ -111,9 +112,10 @@ nav ul li a:hover{
     object-fit: cover;
     position: absolute;
     /* Add a blur effect to the image */
-     
+
 }
-.title h1{
+
+.title h1 {
     position: relative;
     color: aliceblue;
     font-family: Arial, Helvetica, sans-serif;
@@ -121,6 +123,7 @@ nav ul li a:hover{
     text-align: center;
     padding-top: 20px;
 }
+
 .title {
     /* Center the text */
     text-align: center;
@@ -128,7 +131,8 @@ nav ul li a:hover{
     max-width: 50%;
     /* Center the content horizontally */
     margin: 0 auto;
-}   
+}
+
 .title p {
     position: relative;
     /* Remove default margins */
@@ -137,5 +141,5 @@ nav ul li a:hover{
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
-    text-align:justify;
+    text-align: justify;
 }

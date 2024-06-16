@@ -1,176 +1,187 @@
-
 .Bar img {
-    position: absolute;
-    top: 0;
-    width: 100%; /* This will make the image take the full width of the .Bar element */
-    height: 100vh; /* This will make the image take the full height of the viewport */
-    object-fit: cover; /* This will scale the image to cover the .Bar element while maintaining its aspect ratio */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /* This will make the image take the full width of the .Bar element */
+  height: 100vh;
+  /* This will make the image take the full height of the viewport */
+  object-fit: cover;
+  /* This will scale the image to cover the .Bar element while maintaining its aspect ratio */
+}
+
+
+.Bar {
+  display: flex;
+}
+
+
+
+/* Custom Styles for Main Container */
+.maincontainer {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.title h1 {
+  position: relative;
+  color: white;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  font-family: "Karantina", system-ui;
+  font-weight: 400;
+  font-size: 250px;
+  margin-top: 350px;
+  margin-left: 700px;
+}
+
+.categories {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.temple, .nature, .food, .hotel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.small-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+}
+
+.temple p, .nature p, .food p, .hotel p {
+  color: #FFFFFF;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.centre {
+  margin-top: 10px;
+}
+
+.centre p {
+  color: #FFFFFF;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo {
+  color: #FFFFFF;
+  margin-left: 35px;
+  font-size: 20px;
+  animation: flying 2s infinite;
+}
+
+.flying-text {
+  color: #FFFFFF;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  animation: flying 2s infinite;
+}
+
+@keyframes flying {
+  0% {
+    transform: translateY(0);
   }
-  
-  
- .Bar{
-    display: flex; 
- }
-  
- 
-  
-  /* Custom Styles for Main Container */
-  .maincontainer {
-    text-align: center;
-    padding: 50px 0;
+
+  50% {
+    transform: translateY(-20px);
   }
-  
-  .title h1 {
-    position: relative;
-    color: white;
-    font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    font-family: "Karantina", system-ui;
-    font-weight: 400;
-    font-size: 250px;
-    margin-top: 350px;
-    margin-left: 700px;
+
+  100% {
+    transform: translateY(0);
   }
-  
-  .categories {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    margin-top: 50px;
-  }
-  
-  .temple, .nature, .food, .hotel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .small-image {
-    width: 70px;
-    height: 70px;
-    border-radius: 100px;
-  }
-  
-  .temple p, .nature p, .food p, .hotel p {
-    color: #FFFFFF;
-    margin-top: 20px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .centre {
-    margin-top: 10px;
-  }
-  
-  .centre p {
-    color: #FFFFFF;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .logo {
-    color: #FFFFFF;
-    margin-left: 35px;
-    font-size: 20px;
-    animation: flying 2s infinite;
-  }
-  
-  .flying-text {
-    color: #FFFFFF;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    animation: flying 2s infinite;
-  }
-  
-  @keyframes flying {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /* General styling for sections */
-  .section {
-    width: 100%;
-    padding: 50px 0;
-    box-sizing: border-box;
-  }
-  
-  /* Styling for Section 2 */
-  .section.tales {
-    background-color: rgba(0, 0, 0, 0.8); /* Adjust the background color to your needs */
-    color: white;
-  }
-  
-  .content-container {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    max-width: 1200px;
-    width: 100%;
-    padding: 20px;
-    margin: 0 auto; /* Center the content */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-  }
-  
-  .image img {
-    border-radius: 10px;
-  }
-  
-  .text {
-    max-width: 800px;
-  }
-  
-  .text h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  
-  .text p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .links a {
-    display: inline-block;
-    margin-right: 20px;
-    color: #feac40; /* Adjust link color to match your theme */
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-  }
-  
-  .links a:hover {
-    color: white;
-  }
-  
-  /* Adjustments for Bootstrap */
-  .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  
+}
+
+
+
+
+
+
+
+
+
+
+/* General styling for sections */
+.section {
+  width: 100%;
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+
+/* Styling for Section 2 */
+.section.tales {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Adjust the background color to your needs */
+  color: white;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  /* Center the content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.image img {
+  border-radius: 10px;
+}
+
+.text {
+  max-width: 800px;
+}
+
+.text h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.text p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 20px;
+  color: #feac40;
+  /* Adjust link color to match your theme */
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: white;
+}
+
+/* Adjustments for Bootstrap */
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin']!=true){
+if (!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin'] != true) {
     header("location: adminlogin.php");
     exit;
 }
 $adminEx = false;
 $exists = false;
 // connect to database  
-include("./config/db_connect.php");
+include ("./config/db_connect.php");
 
-if(isset($_POST['createUser'])){
+if (isset($_POST['createUser'])) {
     $auname = $_POST['uname'];
     $pass = $_POST['pass'];
 
@@ -22,13 +22,13 @@ if(isset($_POST['createUser'])){
     $result = mysqli_stmt_get_result($stmt);
     $numExistRow = mysqli_num_rows($result);
 
-    if($numExistRow > 0){
+    if ($numExistRow > 0) {
         $exists = true;
     } else {
         $exists = false;
     }
 
-    if($exists == false){
+    if ($exists == false) {
         $query = "INSERT INTO `admin` (`id`, `auname`, `apass`, `date`) VALUES (NULL, ?, ?, current_timestamp());";
         $stmt = mysqli_prepare($conn, $query);
         mysqli_stmt_bind_param($stmt, "ss", $auname, $pass); // Corrected here
@@ -41,7 +41,7 @@ if(isset($_POST['createUser'])){
             echo "<p style='color:red'>Error registering user</p>";
         }
     } else {
-      $adminEx ="<p style='color:red'>admin already exists</p>";
+        $adminEx = "<p style='color:red'>admin already exists</p>";
     }
 }
 ?>
@@ -55,14 +55,15 @@ if(isset($_POST['createUser'])){
     <title>Add Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="datatables.min.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="datatables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
-   
+
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="../modules/home.php">TouristWebsite</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -76,39 +77,40 @@ if(isset($_POST['createUser'])){
                         <a class="nav-link active" aria-current="page" href="admin.php">Home</a>
                     </li>
                     <li class="nav-item">
-                  
+
                     </li>
                 </ul>
                 <div class="d-flex" role="search">
-                  <button  class="btn btn-outline-success"style="margin-right:10px;" type="button" > <?php 
-        echo "Welcome ".$_SESSION['auname'] ."!";
-        ?></button>               
-                  <button class="btn btn-outline-danger" type="button" onclick="location.href='adminlogout.php'" >Logout</button>
+                    <button class="btn btn-outline-success" style="margin-right:10px;" type="button"> <?php
+                    echo "Welcome " . $_SESSION['auname'] . "!";
+                    ?></button>
+                    <button class="btn btn-outline-danger" type="button"
+                        onclick="location.href='adminlogout.php'">Logout</button>
                 </div>
             </div>
         </div>
     </nav>
     <nav style="--bs-breadcrumb-divider: '>'; margin-left:20px;" aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="admin.php">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Add Admin</li>
-  </ol>
-</nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="admin.php">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Admin</li>
+        </ol>
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-md-10">
-            <hr>
-            <hr>
-            <hr>
-            <br>
-           <h1>Manage Admin</h1>
-            <br>
-            <hr>
-            <hr>
-            <hr>
+                <hr>
+                <hr>
+                <hr>
+                <br>
+                <h1>Manage Admin</h1>
+                <br>
+                <hr>
+                <hr>
+                <hr>
                 <form method="post">
                     <div class="mb-3">
-                    <?php echo  $adminEx; ?>
+                        <?php echo $adminEx; ?>
                         <label for="uname" class="form-label">Name</label>
                         <input type="text" class="form-control" id="uname" name="uname" required>
                     </div>
@@ -117,8 +119,8 @@ if(isset($_POST['createUser'])){
                         <input class="form-control" id="pass" name="pass" required>
                     </div>
                     <button type="submit" class="btn btn-primary" name="createUser">Add Admin</button>
-                <br>
-                <br>
+                    <br>
+                    <br>
                 </form>
             </div>
             <br>
@@ -130,58 +132,62 @@ if(isset($_POST['createUser'])){
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz4fnFO9gybBud7RduPuemT//+jJXB16zg6i8UQD3lV5uDC3Yc7bz1Eeow" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script src="datatables.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.dataTables.min.js"></script>
 
     <script>
-      /*  $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-
-        const myModal = document.getElementById('editModal')
-const myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})*/
+        /*  $(document).ready(function() {
+              $('#myTable').DataTable();
+          });
+  
+          const myModal = document.getElementById('editModal')
+  const myInput = document.getElementById('myInput')
+  
+  myModal.addEventListener('shown.bs.modal', () => {
+    myInput.focus()
+  })*/
     </script>
-     <script>
-   /*  edits = document.getElementsByClassName('edit');
-        Array.from(edits).forEach((element)=>{
-            element.addEventListener("click", (e)=>{
-                console.log("edit", );
-                tr = e.target.parentNode.parentNode;
-                title = tr.getElementsByTagName("td")[0].innerText;
-                description = tr.getElementsByTagName("td")[1].innerText;
-                console.log(title,description);
-                titleEdit.value = title;
-                descriptionEdit.value = description;
-                snoEdit.value = e.target.id;
-                console.log("Btn Sno : ",e.target.id);
-                $('#editModal').modal('toggle');
-        })
-        })
-        deletes = document.getElementsByClassName('delete');
-Array.from(deletes).forEach((element)=>{
-    element.addEventListener("click", (e)=>{
-        console.log("edit", );
-        sno = e.target.id.substr(1,);
-        if(confirm("Delete Note !")){
-            console.log("yes");
-            window.location = 'index.php?delete=' + sno;
-        }
-        else{
-            console.log("no");
-        }
-    })
-})*/
+    <script>
+        /*  edits = document.getElementsByClassName('edit');
+             Array.from(edits).forEach((element)=>{
+                 element.addEventListener("click", (e)=>{
+                     console.log("edit", );
+                     tr = e.target.parentNode.parentNode;
+                     title = tr.getElementsByTagName("td")[0].innerText;
+                     description = tr.getElementsByTagName("td")[1].innerText;
+                     console.log(title,description);
+                     titleEdit.value = title;
+                     descriptionEdit.value = description;
+                     snoEdit.value = e.target.id;
+                     console.log("Btn Sno : ",e.target.id);
+                     $('#editModal').modal('toggle');
+             })
+             })
+             deletes = document.getElementsByClassName('delete');
+     Array.from(deletes).forEach((element)=>{
+         element.addEventListener("click", (e)=>{
+             console.log("edit", );
+             sno = e.target.id.substr(1,);
+             if(confirm("Delete Note !")){
+                 console.log("yes");
+                 window.location = 'index.php?delete=' + sno;
+             }
+             else{
+                 console.log("no");
+             }
+         })
+     })*/
     </script>
 </body>
+
 </html>

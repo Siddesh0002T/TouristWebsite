@@ -283,8 +283,8 @@ a {
 body {
     margin: 0;
     padding: 0;
-  }
-  
+}
+
 
 .Bar {
     position: relative;
@@ -293,7 +293,7 @@ body {
 .Bar img {
     position: absolute;
     top: -80px;
-    
+
     /* This will make the image cover the entire container */
     width: 100%;
     height: 100%;
@@ -330,7 +330,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     color: orange;
 }
 
@@ -349,10 +349,10 @@ nav ul li a:hover{
     height: 30px;
     outline: none;
     font-size: 14px;
-    
+
 }
 
-.welcome:hover{
+.welcome:hover {
     color: #feac40;
     cursor: pointer;
 }
@@ -365,9 +365,9 @@ nav ul li a:hover{
 }
 
 .search__input:focus {
-    border-color: #feac40; 
-    background-color: #000000; 
-    color: #ffac40; 
+    border-color: #feac40;
+    background-color: #000000;
+    color: #ffac40;
 }
 
 #LogOutBtn {
@@ -404,7 +404,7 @@ nav ul li a:hover{
 
 /*-------------Main-------------------*/
 
-.Main h1{
+.Main h1 {
 
     color: white;
     display: flex;
@@ -416,25 +416,25 @@ nav ul li a:hover{
     margin-top: 300px;
 }
 
-.categories{
+.categories {
     display: flex;
     justify-content: center;
     gap: 350px;
     margin-top: 260px;
 
-    
+
 }
 
-.categories img{
+.categories img {
 
     width: 70px;
     height: 70px;
     border-radius: 100px;
-  
+
 }
 
 
-.categories p{
+.categories p {
     color: white;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -443,16 +443,24 @@ nav ul li a:hover{
     display: flex;
     justify-content: center;
     padding-top: 10px;
-    
+
 }
 
 
 
 
 @keyframes flying {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .logo {
@@ -476,7 +484,7 @@ nav ul li a:hover{
 
 
 /*--------------------About----------------------*/
-.bg{
+.bg {
     background-color: rgb(0, 0, 0);
     width: 100%;
     height: 250%;
@@ -485,11 +493,11 @@ nav ul li a:hover{
     margin-bottom: 50px;
 }
 
-.About{
+.About {
     display: flex;
 }
 
-.About img{
+.About img {
     width: 350px;
     height: 500px;
     border-radius: 25px;
@@ -498,50 +506,58 @@ nav ul li a:hover{
     object-fit: cover;
 }
 
-.text-content { /* Add this rule */
+.text-content {
+    /* Add this rule */
     display: flex;
     flex-direction: column;
     margin-top: 100px;
     margin-left: 50px;
 }
 
-.About h2{
+.About h2 {
     color: #ffffff;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-.About p{
-    margin-top: 20px; /* Adjust this value as needed */
+.About p {
+    margin-top: 20px;
+    /* Adjust this value as needed */
     color: #ffffff62;
-    height: 198px; /* Adjust this value as needed */
-    overflow-y: scroll; /* Add this line */
+    height: 198px;
+    /* Adjust this value as needed */
+    overflow-y: scroll;
+    /* Add this line */
     text-align: justify;
 }
 
 .About p::-webkit-scrollbar {
-    width: 5px; /* Width of the scrollbar */
-    
+    width: 5px;
+    /* Width of the scrollbar */
+
 }
 
 .About p::-webkit-scrollbar-track {
-    background: #ffffff62; /* Color of the track */
+    background: #ffffff62;
+    /* Color of the track */
     border-radius: 10px;
-    
+
 }
 
 .About p::-webkit-scrollbar-thumb {
-    background: #ffffff; /* Color of the thumb */
+    background: #ffffff;
+    /* Color of the thumb */
     border-radius: 10px;
 }
 
 .About p::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 82, 28, 1); /* Color of the thumb on hover */
+    background: rgba(255, 82, 28, 1);
+    /* Color of the thumb on hover */
 }
 
 
-.list{
+.list {
     display: flex;
     gap: 50px;
 }
@@ -551,21 +567,21 @@ nav ul li a:hover{
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
-   position: relative;
-   top: 50px;
+    position: relative;
+    top: 50px;
     cursor: pointer;
     text-decoration: none;
 }
 
 
-.list h4 a:hover{
+.list h4 a:hover {
 
     color: rgba(255, 82, 28, 1);
 }
 
 /*----------------Places ---------------------------*/
 
-.Place h1{
+.Place h1 {
     color: #FFFFFF;
     display: flex;
     justify-content: center;
@@ -591,7 +607,7 @@ nav ul li a:hover{
     object-fit: cover;
     transition: opacity 0.3s ease;
     transition: transform 0.5s ease;
-    
+
 }
 
 
@@ -601,7 +617,7 @@ nav ul li a:hover{
 }
 
 
-  
+
 
 .Place .image-info {
     position: absolute;
@@ -627,23 +643,28 @@ nav ul li a:hover{
 #Appbtn {
     background: none;
     border: none;
-   
+
     cursor: pointer;
     padding: 0;
     padding-right: 100px;
-        
+
     color: #ffffff;
 }
 
-#Appbtn:hover{
+#Appbtn:hover {
     color: #feac40;
 }
 
 /*-----------------------Want-----------------*/
 
 @keyframes moveRight {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(710%); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(710%);
+    }
 }
 
 .video video {
@@ -651,12 +672,13 @@ nav ul li a:hover{
     width: 250px;
     mix-blend-mode: screen;
     margin-top: 250px;
-    animation: moveRight 20s linear infinite; /* Add this line */
+    animation: moveRight 20s linear infinite;
+    /* Add this line */
 }
 
 
 
-.Toursit h1{
+.Toursit h1 {
     color: #FFFFFF;
     display: flex;
     justify-content: center;
@@ -668,9 +690,17 @@ nav ul li a:hover{
 }
 
 @keyframes fly {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .arrow {
@@ -678,10 +708,11 @@ nav ul li a:hover{
     margin-top: 50px;
     font-size: 20px;
     cursor: pointer;
-    animation: fly 1s infinite; /* Add this line */
+    animation: fly 1s infinite;
+    /* Add this line */
 }
 
-.Toursit a{
+.Toursit a {
     display: flex;
     justify-content: center;
     margin-top: 10px;
@@ -692,25 +723,27 @@ nav ul li a:hover{
     cursor: pointer;
     text-decoration: none;
     font-size: 20px;
-    animation: fly 1s infinite; /* Add this line */
+    animation: fly 1s infinite;
+    /* Add this line */
 }
 
-.Toursit a:hover{
+.Toursit a:hover {
     color: rgba(255, 82, 28, 1);
-    transition: color 0.5s ease-in-out; /* Add this line */
+    transition: color 0.5s ease-in-out;
+    /* Add this line */
 }
 
 
-.Contact_info h1{
+.Contact_info h1 {
     color: #686868;
-    
+
     margin-top: 100px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
 
-.Contact_info p{
+.Contact_info p {
     color: #686868;
     margin-top: 100px;
     font-family: "Roboto", sans-serif;
@@ -727,7 +760,7 @@ nav ul li a:hover{
 
 
 
-    
+
 body, html {
     height: 100%;
     margin: 0;
@@ -744,20 +777,22 @@ body, html {
 }
 
 footer {
-    background-color: #000; /* Set footer background to black */
+    background-color: #000;
+    /* Set footer background to black */
     color: white;
     text-align: center;
     padding: 1rem 0;
 }
 
 .table {
-    background-color: transparent; /* Make table background transparent */
+    background-color: transparent;
+    /* Make table background transparent */
 }
 
 
-   
 
- 
+
+
 
 /* Add this for the hamburger menu */
 .hamburger-menu {
@@ -779,15 +814,16 @@ footer {
 
 /* CSS for smaller screens */
 @media (max-width: 768px) {
-    body{
+    body {
 
         background-color: #000;
     }
+
     nav ul {
-       
+
         display: none;
         margin-left: 100px;
-        
+
     }
 
     nav ul li {
@@ -809,7 +845,7 @@ footer {
         display: flex;
     }
 
-    Main h1{
+    Main h1 {
 
         color: white;
         display: flex;
@@ -820,26 +856,26 @@ footer {
         font-style: normal;
         margin-top: 300px;
     }
-    
-    .categories{
+
+    .categories {
         display: flex;
         justify-content: center;
         gap: 350px;
         margin-top: 260px;
-    
-        
+
+
     }
-    
-    .categories img{
-    
+
+    .categories img {
+
         width: 70px;
         height: 70px;
         border-radius: 100px;
-      
+
     }
-    
-    
-    .categories p{
+
+
+    .categories p {
         color: white;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
@@ -848,18 +884,26 @@ footer {
         display: flex;
         justify-content: center;
         padding-top: 10px;
-        
+
     }
-    
-    
-    
-    
+
+
+
+
     @keyframes flying {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
-        100% { transform: translateY(0); }
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
     }
-    
+
     .logo {
         color: #FFFFFF;
         margin-left: 30px;
@@ -867,7 +911,7 @@ footer {
         cursor: pointer;
         animation: flying 2s infinite;
     }
-    
+
     .flying-text {
         margin-top: 10px;
         color: #FFFFFF;
