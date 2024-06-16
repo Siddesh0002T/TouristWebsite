@@ -213,6 +213,27 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   </form>
 </div>
 
+<!-- Contact Form Widget Here -->
+
+<div class="form-popup" id="myApplyForm">
+<form action="https://api.web3forms.com/submit" method="POST" class="form-container">
+    <h3 style="margin-top: 50px;">Apply</h3>
+    <input type="hidden" name="access_key" value="88c2995c-6a9d-41c4-ba16-a3bc06a8bbdb">
+    <label for="register-username">Full Name</label>
+    <input type="text" placeholder="Enter Your Full Name" id="register-username" name="Name" required>
+  
+    <label for="register-email">Email</label>
+    <input type="email" placeholder="Enter Your Email" id="register-email" name="Email" required>
+
+    <label for="register-password">Message</label>
+    <textarea class="textArea" type="text" placeholder="Message" name="Message" style=" display: block; height: 50px; width: 100%; background-color: rgba(255,255,255,0.07); border-radius: 3px; padding: 0 10px; margin-top: 8px; font-size: 14px; font-weight: 300;" rows="10" id="msg" name="msg" required></textarea>
+
+    <button type="submit" style="margin-top: 30px;" name="Send Message">Message</button>
+    <button style="margin-top: 30px;" name="close" onclick="closeApplyForm()">close</button>
+  </form>
+</div>
+            
+
         <footer class="text-white text-center text-lg-start bg-dark mt-auto">
             <!-- Grid container -->
             <div class="container p-4">
@@ -224,9 +245,10 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 
                         <p>
                         A Travel Agent is a professional who simplifies the process of arranging travel, acting as a customer advocate, coordinator, and problem-solver. </p>
-                        <button onclick=""  type="button" id="Appbtn">Apply</button>
-
-                       
+                      
+  <!-- Job Apply Form Widget Here --> 
+                        <button onclick="openApplyForm()"  type="button" id="Appbtn">Apply</button>
+           
 
                         <div class="mt-4">
                             <!-- Facebook -->
@@ -313,6 +335,12 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+function openApplyForm() {+
+  document.getElementById("myApplyForm").style.display = "block";
+}
+
+function closeApplyForm() {
+  document.getElementById("myApplyForm").style.display = "none";
 </script>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
