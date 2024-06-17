@@ -135,11 +135,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 <link rel="stylesheet" href="../assets/css/widgetContact.css">
 
 
-<style>
-   body{
-    
-   }
-</style>
+
 </head>
 
 <body id="bggg">
@@ -162,7 +158,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         echo "".$_SESSION['uname'] ."!";
         ?></li> 
             <li><input class="search__input" type="text" placeholder="Search"></li>
-            <li><button onclick=""  type="button" id="LogOutBtn">Logout</button></li>
+            <li id="LogOutBtn"><a href="logout.php">Logout</a></li>
+
+            
         </ul>
        </nav>
 
@@ -301,7 +299,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         <div class="content">
             <!-- Your main content goes here -->
         </div>
-        <button class="open-button" onclick="openForm()">Contact Us <i class='far fa-comment'></i></button>
+        <button class="open-button" onclick="openForm()">Contact Us</button>
 <!-- Contact Form Widget Here -->
 
 <div class="form-popup" id="myForm">

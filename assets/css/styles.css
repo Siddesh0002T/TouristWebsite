@@ -349,6 +349,7 @@ nav ul li a:hover{
     height: 30px;
     outline: none;
     font-size: 14px;
+    
 }
 
 .welcome:hover{
@@ -369,25 +370,37 @@ nav ul li a:hover{
     color: #ffac40; 
 }
 
-
 #LogOutBtn {
+    margin-left: auto;
+    padding: 5px 20px;
+}
+
+#LogOutBtn a {
+    color: white;
+    text-decoration: none;
+}
+
+#LogOutBtn a:hover {
+    color: orange;
+}
+
+
+
+/*#LogOutBtn {
     background: none;
     border: none;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
     cursor: pointer;
-    margin-left: 10px;
-    position: relative;
-    left: 1000px;
-    margin-top: 10px;
+    padding-left: 200px;
     color: #ffffff;
 }
 
 #LogOutBtn:hover{
     color: #feac40;
 }
-
+*/
 
 /*-------------Main-------------------*/
 
@@ -407,7 +420,7 @@ nav ul li a:hover{
     display: flex;
     justify-content: center;
     gap: 350px;
-    margin-top: 200px;
+    margin-top: 260px;
 
     
 }
@@ -617,6 +630,8 @@ nav ul li a:hover{
    
     cursor: pointer;
     padding: 0;
+    padding-right: 100px;
+        
     color: #ffffff;
 }
 
