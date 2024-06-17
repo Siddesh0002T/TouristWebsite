@@ -189,7 +189,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 
     <div class="centre">
     <p class="flying-text">Scroll Down</p>
-    <i class="fa-solid fa-arrow-down logo"></i>
+    <a href="#About_Section"><i class="fa-solid fa-arrow-down logo"></i></a>
     </div>
 
 

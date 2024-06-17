@@ -720,21 +720,7 @@ nav ul li a:hover{
 
 
 
-/* Add this for the hamburger menu */
-.hamburger-menu {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-}
 
-.hamburger-menu div {
-    width: 2rem;
-    height: 0.25rem;
-    background-color: #ffffff;
-}
 
 
 /*-------------footer-----------*/
@@ -773,20 +759,41 @@ footer {
 
  
 
+/* Add this for the hamburger menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
 
+.hamburger-menu div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #ffffff;
+}
 
 
 
 /* CSS for smaller screens */
 @media (max-width: 768px) {
+    body{
+
+        background-color: #000;
+    }
     nav ul {
-        flex-direction: column;
+       
         display: none;
+        margin-left: 100px;
+        
     }
 
     nav ul li {
         margin-right: 0;
         margin-bottom: 10px;
+        font-size: 15px;
     }
 
     #LogOutBtn {
@@ -795,10 +802,79 @@ footer {
     }
 
     .search__input {
-        width: 100%;
+        width: 30%;
     }
 
     .hamburger-menu {
         display: flex;
+    }
+
+    Main h1{
+
+        color: white;
+        display: flex;
+        justify-content: center;
+        font-size: 200px;
+        font-family: "Karantina", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        margin-top: 300px;
+    }
+    
+    .categories{
+        display: flex;
+        justify-content: center;
+        gap: 350px;
+        margin-top: 260px;
+    
+        
+    }
+    
+    .categories img{
+    
+        width: 70px;
+        height: 70px;
+        border-radius: 100px;
+      
+    }
+    
+    
+    .categories p{
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        
+    }
+    
+    
+    
+    
+    @keyframes flying {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0); }
+    }
+    
+    .logo {
+        color: #FFFFFF;
+        margin-left: 30px;
+        font-size: 20px;
+        cursor: pointer;
+        animation: flying 2s infinite;
+    }
+    
+    .flying-text {
+        margin-top: 10px;
+        color: #FFFFFF;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        animation: flying 2s infinite;
+        cursor: pointer;
     }
 }
