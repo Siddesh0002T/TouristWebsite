@@ -377,7 +377,10 @@ nav ul li a:hover{
     font-style: normal;
     font-size: 20px;
     cursor: pointer;
-    padding-left: 200px;
+    margin-left: 10px;
+    position: relative;
+    left: 1000px;
+    margin-top: 10px;
     color: #ffffff;
 }
 
@@ -404,7 +407,7 @@ nav ul li a:hover{
     display: flex;
     justify-content: center;
     gap: 350px;
-    margin-top: 250px;
+    margin-top: 200px;
 
     
 }
