@@ -23,6 +23,16 @@ if (isset($_POST['apply'])) {
     $emp_age = $_POST['emp_age'];
     $emp_gender = $_POST['emp_gender'];
 
+echo gettype( $emp_name);
+echo gettype( $emp_email);
+echo gettype( $emp_phone);
+echo gettype( $emp_pass);
+echo gettype( $emp_type);
+echo gettype( $emp_age);
+echo gettype( $emp_gender);
+
+
+
     // Check if email already exists
     $existsSql = "SELECT * FROM `emp` WHERE `emp_email` = ?";
     $stmt = mysqli_prepare($conn, $existsSql);
