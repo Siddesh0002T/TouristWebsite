@@ -130,6 +130,37 @@ if (!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin'] != true) {
                         </tr>
                     </tbody>
                 </table>
+                <h3>Users</h3>
+                <hr>
+                <table class="table" id="adminFunction">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Use</th>
+                            <th scope="col">Button</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h3><b>Create Emp</b></h3>
+                            </td>
+                            <td>Create User in Emp</td>
+                            <td><button class="btn btn-outline-primary" type="button"
+                                    onclick="location.href='adduser.php'">Go !</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3><b>Manage Emp</b></h3>
+                            </td>
+                            <td>Manage Emp edit,block/unblock,and delete user from database</td>
+                            <td><button class="btn btn-outline-primary" type="button"
+                                    onclick="location.href='manageEmp.php'">Go !</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
