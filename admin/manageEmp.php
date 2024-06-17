@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="modal-content">
                 <form action="manageuser.php" method="post">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="editModalLabel">Alter User</h1>
+                        <h1 class="modal-title fs-5" id="editModalLabel">Alter Employee</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -71,16 +71,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="hidden" name="snoEdit" id="snoEdit">
                         <div class="mb-3">
                             <label for="unameEdit" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="unameEdit" name="unameEdit" required>
+                            <input type="text" class="form-control" id="unameEdit" name="emp_nameEdit" required>
                         </div>
                         <div class="mb-3">
                             <label for="uemailEdit" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="uemailEdit" name="uemailEdit" required>
+                            <input type="email" class="form-control" id="uemailEdit" name="emp_emailEdit" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="uemailEdit" class="form-label">Phone</label>
+                            <input type="email" class="form-control" id="uemailEdit" name="emp_phoneEdit" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="uemailEdit" class="form-label">Employee Type</label>
+                            <input type="email" class="form-control" id="uemailEdit" name="emp_typeEdit" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="uemailEdit" class="form-label">Age</label>
+                            <input type="email" class="form-control" id="uemailEdit" name="emp_ageEdit" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="uemailEdit" class="form-label">Gender</label>
+                            <input type="email" class="form-control" id="uemailEdit" name="emp_genderEdit" required>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Alter User</button>
+                        <button type="submit" class="btn btn-primary">Alter Employee</button>
                     </div>
                 </form>
             </div>
@@ -138,7 +154,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <th scope="col">Sr.No.</th>
                             <th scope="col">Name </th>
                             <th scope="col">Email</th>
-                            <th scope="col">Date And Time</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Genger</th>
+                            <th scope="col">Date</th>
                             <th scope="col">Action</th>
                             <th scope="col">Block/Unblock</th>
 
@@ -146,18 +166,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "SELECT * FROM tuser";
+                        $sql = "SELECT * FROM emp";
                         $result = mysqli_query($conn, $sql);
                         $sno = 0;
                         while ($row = mysqli_fetch_assoc($result)) {
                             $sno = $sno + 1;
                             echo "<tr>
                                     <td scope='row'>" . $sno . " </td>
-                                    <td>" . $row['uname'] . "</td>
-                                    <td>" . $row['uemail'] . "</td>
-                                    <td>" . $row['register_date'] . "</td>
-                                    <td><button class='btn btn-sm btn-primary edit' id=" . $row['id'] . ">Edit</button> <button class='btn btn-sm btn-danger delete' id=d" . $row['id'] . ">Delete</button></td>
-                                    <td>" . $row['block_unblock'] . "</td>
+                                    <td>" . $row['emp_name'] . "</td>
+                                    <td>" . $row['emp_email'] . "</td>
+                                    <td>" . $row['emp_phone'] . "</td>
+                                    <td>" . $row['emp_type'] . "</td>
+                                    <td>" . $row['emp_age'] . "</td>
+                                    <td>" . $row['emp_gender'] . "</td>
+                                   <td>" . $row['emp_date'] . "</td>
+                                    <td><button class='btn btn-sm btn-primary edit' id=" . $row['emp_id'] . ">Edit</button> <button class='btn btn-sm btn-danger delete' id=d" . $row['emp_id'] . ">Delete</button></td>
+                                    <td>" . $row['emp_status'] . "</td>
                                 </tr>";
                         }
                         ?>
@@ -200,11 +224,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             element.addEventListener("click", (e) => {
                 console.log("edit",);
                 tr = e.target.parentNode.parentNode;
-                uname = tr.getElementsByTagName("td")[1].innerText;
-                uemail = tr.getElementsByTagName("td")[2].innerText;
-                console.log(uname, uemail);
-                unameEdit.value = uname;
-                uemailEdit.value = uemail;
+                emp_name = tr.getElementsByTagName("td")[1].innerText;
+                emp_email = tr.getElementsByTagName("td")[2].innerText;
+                emp_phone = tr.getElementsByTagName("td")[3].innerText;
+                emp_type = tr.getElementsByTagName("td")[4].innerText;
+                emp_age = tr.getElementsByTagName("td")[5].innerText;
+                emp_gender = tr.getElementsByTagName("td")[6].innerText;
+                console.log(emp_name, emp_email);
+                emp_nameEdit.value = emp_name;
+                emp_emailEdit.value = emp_email;
+                emp_phoneEdit.value = emp_phone;
+                emp_typeEdit.value = emp_type;
+                emp_ageEdit.value = emp_age;
+                emp_genderEdit.value = emp_gender;
                 snoEdit.value = e.target.id;
                 console.log("Btn Sno : ", e.target.id);
                 $('#editModal').modal('toggle');
