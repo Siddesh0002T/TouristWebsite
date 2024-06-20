@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Welcome to Login</title>
+    <link rel="stylesheet" href="../assets/css/gotologin.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <style>
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+   </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="formbg">
+        <h3>Thank You For Register !</h3>
+         
+        <!---button onclick="gotoLogin()">Go to Log In</!---button -->
+        <button id="myButton">Go to Log In</button>
+    </div>
+    <!--script src="../assets/js/gotologin.js"></!--script-->
+    <script>
+    console.log("Hello World");
+// Get the button element
+const button = document.getElementById("myButton");
+
+// Attach the gotoLogin function to the button's click event
+button.addEventListener("click", gotoLogin);
+
+function gotoLogin () {
+    window.location = 'emplogin.php';
+}
+
+    </script>
+</body>
+</html>

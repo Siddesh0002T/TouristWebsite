@@ -101,7 +101,7 @@ if (isset($_POST['apply'])) {
         mysqli_stmt_execute($stmt);
 
         if (mysqli_stmt_affected_rows($stmt) > 0) {
-            header("Location: gotologin.html");
+            header("Location: ../employee/gotologin.html");
             exit();
         } else {
             echo "<p style='color:red'>Error registering user</p>";
