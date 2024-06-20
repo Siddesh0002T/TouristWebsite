@@ -421,7 +421,7 @@ if (isset($_POST['apply'])) {
                             </li>
                             <li class="mb-3">
                                 <span class="fa-li"><i class="fas fa-phone"></i></span><span
-                                    class="ms-2">8457896325</span>
+                                    class="ms-2">00000000000</span>
                             </li>
                         </ul>
                     </div>

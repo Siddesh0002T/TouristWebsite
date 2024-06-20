@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-    <!-- Design by foolishdeveloper.com -->
+
     <title>Welcome to Login</title>
     <link rel="stylesheet" href="./assets/css/adminlogin.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">

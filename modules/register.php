@@ -45,7 +45,7 @@ if (isset($_POST['register'])) {
 <html lang="en">
 
 <head>
-    <!-- Design by foolishdeveloper.com -->
+   
     <title>Welcome to register</title>
     <link rel="stylesheet" href="../assets/css/register.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">

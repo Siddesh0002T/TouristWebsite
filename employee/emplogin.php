@@ -1,31 +1,36 @@
 <?php
+session_start();
 $login = false;
 $showError = false;
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     include '../config/db_connect.php';
-    $uemail = $_POST["uemail"];
-    $pass = $_POST["pass"]; 
-    
-     
-    $query = "Select * from tuser where uemail='$uemail' AND pass='$pass'";
-    //Debug $query = "Select * from tuser where uemail='$uemail'";
-    $result = mysqli_query($conn, $query);
-    $num = mysqli_num_rows($result);
-    if ($num == 1){
-        while($row=mysqli_fetch_assoc($result)){
-           
-                $login = true;
-                session_start();
-                $_SESSION['loggedin'] = true;
-                $_SESSION['uemail'] = $uemail;
-                $_SESSION['uname'] = $row['uname']; // Get the user's name from the database
-                header("location: home.php");
-         //debug        echo  $_SESSION['uname'];
+    $emp_email = $_POST["emp_email"];
+    $emp_pass = $_POST["emp_pass"]; 
 
-        }
+    // Prepare the query
+    $stmt = $conn->prepare("Select * from emp where emp_email=?");
+    $stmt->bind_param("s", $emp_email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $num = $result->num_rows;
+    
+    if ($num == 1){
+        $row = $result->fetch_assoc();
+        $hashed_pass = $row['emp_pass'];
         
-    } 
-    else{
+        // Verify the password
+        if (password_verify($emp_pass, $hashed_pass)) {
+            $login = true;
+            $_SESSION['emploggedin'] = true;
+            $_SESSION['emp_email'] = $emp_email;
+            $_SESSION['emp_name'] = $row['emp_name']; // Get the user's name from the database
+            header("location: employee.php");
+            exit();
+        } else {
+            $showError = "Invalid Credentials";
+        }
+    } else {
         $showError = "Invalid Credentials";
     }
 }
@@ -56,15 +61,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="shape"></div>
     </div>
     <form method="POST">
-        <h3>Login Here</h3>
+        <h3>Employee Login</h3>
         <?php if (isset($showError)) { ?>
             <p style="color: red;"><?php echo $showError; ?></p>
         <?php } ?>
         <label for="username">Email</label>
-        <input type="email" placeholder="Email id" id="username" name="uemail" required>
+        <input type="email" placeholder="Email id" id="username" name="emp_email" required>
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password" name="pass" required>
+        <input type="password" placeholder="Password" id="password" name="emp_pass" required>
      
         <button>Log In</button>
         <a href="register.php">Register</a>
