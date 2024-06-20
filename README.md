@@ -42,6 +42,15 @@ https://api.web3forms.com/submit
   </sub>
   </a>
   </td>
+   <td align="center" valign="top"  width="14.28%">
+  <a href="https://github.com/Siddhuu000me">
+  <img src="https://avatars.githubusercontent.com/u/94625517?s=96&v=4" width="100px;" alt="Siddhuu000me"/>
+  <br />
+  <sub>
+  <b>Siddhuu000me</b>
+  </sub>
+  </a>
+  </td>
   </tr>
  </tbody>
 </table>
