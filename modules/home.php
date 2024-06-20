@@ -8,7 +8,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
 ?>
 
-<?php
+<!--?php
 $emailEx = false;
 $exists = false;
 // connect to database  
@@ -23,17 +23,7 @@ if (isset($_POST['apply'])) {
     $emp_age = $_POST['emp_age'];
     $emp_gender = $_POST['emp_gender'];
 
-echo gettype( $emp_name);
-echo gettype( $emp_email);
-echo gettype( $emp_phone);
-echo gettype( $emp_pass);
-echo gettype( $emp_type);
-echo gettype( $emp_age);
-echo gettype( $emp_gender);
-
-
-
-    // Check if email already exists
+  // Check if email already exists
     $existsSql = "SELECT * FROM `emp` WHERE `emp_email` = ?";
     $stmt = mysqli_prepare($conn, $existsSql);
     // echo $stmt;
@@ -52,6 +42,62 @@ echo gettype( $emp_gender);
         $query = "INSERT INTO `emp` (`emp_id`, `emp_name`, `emp_email`, `emp_phone`,`emp_type`, `emp_age`, `emp_gender`, `emp_pass`, `emp_date`, `emp_status`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), 1);";
         $stmt = mysqli_prepare($conn, $query);
         mysqli_stmt_bind_param($stmt, "sssssss", $emp_name, $emp_email, $emp_phone, $emp_type, $emp_age, $emp_gender, $emp_pass);
+        mysqli_stmt_execute($stmt);
+
+        if (mysqli_stmt_affected_rows($stmt) > 0) {
+            header("Location: gotologin.html");
+            exit();
+        } else {
+            echo "<p style='color:red'>Error registering user</p>";
+        }
+    } else {
+        $emailEx = "<p style='color:red'>Email already exists</p>";
+    }
+}
+?-->
+<?php
+$emailEx = false;
+$exists = false;
+
+// Connect to database
+include("../config/db_connect.php");
+
+if (isset($_POST['apply'])) {
+    $emp_name = $_POST['emp_name'];
+    $emp_email = $_POST['emp_email'];
+    $emp_phone = $_POST['emp_phone'];
+    $emp_pass = $_POST['emp_pass'];
+    $emp_type = $_POST['emp_type'];
+    $emp_age = $_POST['emp_age'];
+    $emp_gender = $_POST['emp_gender'];
+
+    // Validate form data
+    if (empty($emp_name) || empty($emp_email) || empty($emp_phone) || empty($emp_pass) || empty($emp_type) || empty($emp_age) || empty($emp_gender)) {
+        echo "<p style='color:red'>Please fill in all fields</p>";
+        exit();
+    }
+
+    // Check if email already exists
+    $existsSql = "SELECT * FROM `emp` WHERE `emp_email` =?";
+    $stmt = mysqli_prepare($conn, $existsSql);
+    mysqli_stmt_bind_param($stmt, "s", $emp_email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $numExistRow = mysqli_num_rows($result);
+
+    if ($numExistRow > 0) {
+        $exists = true;
+    } else {
+        $exists = false;
+    }
+
+    if ($exists == false) {
+        // Hash password using bcrypt
+        $hashed_pass = password_hash($emp_pass, PASSWORD_BCRYPT);
+
+        $query = "INSERT INTO `emp` (`emp_id`, `emp_name`, `emp_email`, `emp_phone`, `emp_type`, `emp_age`, `emp_gender`, `emp_pass`, `emp_date`, `emp_status`) VALUES (NULL,?,?,?,?,?,?,?, current_timestamp(), 1);";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "sssssss", $emp_name, $emp_email, $emp_phone, $emp_type, $emp_age, $emp_gender, $hashed_pass);
         mysqli_stmt_execute($stmt);
 
         if (mysqli_stmt_affected_rows($stmt) > 0) {
@@ -318,7 +364,7 @@ echo gettype( $emp_gender);
                     <option class="optionss" value="Female">Female</option>
                 </select>
 
-                <button type="submit" style="margin-top: 30px;" name="Send Message">Appy For Job</button>
+                <button type="submit" style="margin-top: 30px;" name="apply">Appy For Job</button>
                 <button style="margin-top: 30px;" name="close" onclick="closeApplyForm()">close</button>
             </form>
         </div>
