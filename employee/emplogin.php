@@ -25,6 +25,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION['emploggedin'] = true;
             $_SESSION['emp_email'] = $emp_email;
             $_SESSION['emp_name'] = $row['emp_name']; // Get the user's name from the database
+            $_SESSION['emp_phone'] = $row['emp_phone'];
+            $_SESSION['emp_type'] = $row['emp_type'];
+            $_SESSION['emp_age'] = $row['emp_age'];
+            $_SESSION['emp_gender'] = $row['emp_gender'];
+            $_SESSION['emp_date'] = $row['emp_date'];
             header("location: employee.php");
             exit();
         } else {
