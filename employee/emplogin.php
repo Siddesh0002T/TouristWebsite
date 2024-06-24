@@ -23,6 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if (password_verify($emp_pass, $hashed_pass)) {
             $login = true;
             $_SESSION['emploggedin'] = true;
+            $_SESSION['emp_id'] = $row['emp_id'];
             $_SESSION['emp_email'] = $emp_email;
             $_SESSION['emp_name'] = $row['emp_name']; // Get the user's name from the database
             $_SESSION['emp_phone'] = $row['emp_phone'];

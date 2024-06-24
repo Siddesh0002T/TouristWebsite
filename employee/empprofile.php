@@ -5,11 +5,11 @@ if (!isset($_SESSION['emploggedin']) || $_SESSION['emploggedin'] != true) {
     header("location: emplogin.php");
     exit;
 }
+include '../config/db_connect.php';
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,7 @@ if (!isset($_SESSION['emploggedin']) || $_SESSION['emploggedin'] != true) {
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style type="text/css">
     	body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -176,7 +177,12 @@ hr {
             </div>
         </div>
     </nav>
-
+    <nav style="--bs-breadcrumb-divider: '>'; margin-left:20px;" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="employee.php">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">My Profile</li>
+        </ol>
+    </nav>
     <div class="container bootstrap snippets bootdey">
 <div class="row">
 <div class="main-content">
@@ -188,9 +194,10 @@ hr {
 <div class="col-md-3">
 <div class="user-info-left">
 <img class="img-responsive" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Profile Picture">
+<br>
 <h2><i class="fa fa-circle green-font online-icon"></i><sup class="sr-only">online</sup>My Profile </h2>
-</div>
-</div>
+<button class="btn btn-outline-secondary edit" style="border-radius:0px" type="button" onclick="location.href='editProfile.php'"> <i class="fa fa-edit" ></i> Edit Profile </button>
+
 <div class="col-md-9">
 <div class="user-info-right">
 <div class="basic-info">
@@ -353,19 +360,9 @@ hr {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  
 
-    <script src="./assets/js/dataTables/datatables.min.js"></script>
-    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.dataTables.min.js"></script>
     <script>
-        /*    $(document).ready(function() {
-               $('#adminFunction').DataTable();
-           });*/
-        /*
-  function logOut () {
-  window.location = 'adminlogout.php';
-  }*/
     </script>
 </body>
 

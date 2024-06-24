@@ -143,14 +143,7 @@ if (!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin'] != true) {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <h3><b>Create Emp</b></h3>
-                            </td>
-                            <td>Create User in Emp</td>
-                            <td><button class="btn btn-outline-primary" type="button"
-                                    onclick="location.href='adduser.php'">Go !</button></td>
-                        </tr>
+                       
                         <tr>
                             <td>
                                 <h3><b>Manage Emp</b></h3>
@@ -179,13 +172,6 @@ if (!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin'] != true) {
     <script src="./assets/js/dataTables/datatables.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.dataTables.min.js"></script>
     <script>
-        /*    $(document).ready(function() {
-               $('#adminFunction').DataTable();
-           });*/
-        /*
-  function logOut () {
-  window.location = 'adminlogout.php';
-  }*/
     </script>
 </body>
 
