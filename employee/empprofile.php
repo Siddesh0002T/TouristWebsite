@@ -196,8 +196,10 @@ hr {
 <img class="img-responsive" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Profile Picture">
 <br>
 <h2><i class="fa fa-circle green-font online-icon"></i><sup class="sr-only">online</sup>My Profile </h2>
-<button class="btn btn-outline-secondary edit" style="border-radius:0px" type="button" onclick="location.href='editProfile.php'"> <i class="fa fa-edit" ></i> Edit Profile </button>
+<button class="btn btn-outline-secondary" style="border-radius:0px" type="button" onclick="location.href='editProfile.php'"> <i class="fa fa-edit" ></i> Edit Profile </button>
 
+</div>
+</div>
 <div class="col-md-9">
 <div class="user-info-right">
 <div class="basic-info">
