@@ -89,21 +89,20 @@ if (isset($_POST['book'])){
     $sql = "UPDATE emp SET is_free = FALSE WHERE emp_id = $emp_id";
     $conn->query($sql);
 
-
+/*
     // Send email to user
- //   $to = $user['uemail'];
-   // $subject = "Tour Guide Assigned";
-  //  $message = "Dear " . $user['uname'] . ",\n\nYou have been assigned a tour guide.\n\nGuide Details:\nName: " . $emp['emp_name'] . "\nEmail: " . $emp['emp_email'] ."\nPhone: " . $emp['emp_phone'] ."\nAge: " . $emp['emp_age'] . "\nGender: " . $emp['emp_gender'] . "\nTour Date: $tour_date\n\nBest Regards,\nTouritWeb";
-  //  mail($to, $subject, $message);
+    $to = $user['uemail'];
+    $subject = "Tour Guide Assigned";
+    $message = "Dear " . $user['uname'] . ",\n\nYou have been assigned a tour guide.\n\nGuide Details:\nName: " . $emp['emp_name'] . "\nEmail: " . $emp['emp_email'] ."\nPhone: " . $emp['emp_phone'] ."\nAge: " . $emp['emp_age'] . "\nGender: " . $emp['emp_gender'] . "\nTour Date: $tour_date\n\nBest Regards,\nTouritWeb";
+    mail($to, $subject, $message);
 
     // Send email to guide
-   // $to = $emp['emp_email'];
-   // $subject = "New Tour Assignment";
-   // $message = "Dear " . $emp['emp_name'] . ",\n\nYou have been assigned a new tour.\n\nUser Details:\nName: " . $user['uname'] . "\nEmail: " . $user['uemail'] . "\nTour Date: $tour_date\n\nBest Regards,\nTouritWeb";
-   // mail($to, $subject, $message);
-
-    echo "Tour booked successfully. You will receive an email with your guide details.";
-}
+    $to = $emp['emp_email'];
+    $subject = "New Tour Assignment";
+    $message = "Dear " . $emp['emp_name'] . ",\n\nYou have been assigned a new tour.\n\nUser Details:\nName: " . $user['uname'] . "\nEmail: " . $user['uemail'] . "\nTour Date: $tour_date\n\nBest Regards,\nTouritWeb";
+    mail($to, $subject, $message);
+   // echo "Tour booked successfully. You will receive an email with your guide details.";
+}*/
 ?>
 <html lang="en">
 

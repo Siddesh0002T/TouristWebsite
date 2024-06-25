@@ -83,6 +83,14 @@ if (!isset($_SESSION['emploggedin']) || $_SESSION['emploggedin'] != true) {
                             <td><button class="btn btn-outline-primary" type="button"
                                     onclick="location.href='empprofile.php'">Go !</button></td>
                         </tr>
+                        <tr>
+                            <td>
+                                <h3><b>My Tasks</b></h3>
+                            </td>
+                            <td>View Your Tasks</td>
+                            <td><button class="btn btn-outline-primary" type="button"
+                                    onclick="location.href='empTask.php'">Go !</button></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
