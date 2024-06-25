@@ -6,56 +6,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     exit;
 }
 
-?>
-
-<!--?php
-$emailEx = false;
-$exists = false;
-// connect to database  
-include ("../config/db_connect.php");
-
-if (isset($_POST['apply'])) {
-    $emp_name = $_POST['emp_name'];
-    $emp_email = $_POST['emp_email'];
-    $emp_phone = $_POST['emp_phone'];
-    $emp_pass = $_POST['emp_pass'];
-    $emp_type = $_POST['emp_type'];
-    $emp_age = $_POST['emp_age'];
-    $emp_gender = $_POST['emp_gender'];
-
-  // Check if email already exists
-    $existsSql = "SELECT * FROM `emp` WHERE `emp_email` = ?";
-    $stmt = mysqli_prepare($conn, $existsSql);
-    // echo $stmt;
-    mysqli_stmt_bind_param($stmt, "s", $emp_email);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    $numExistRow = mysqli_num_rows($result);
-
-    if ($numExistRow > 0) {
-        $exists = true;
-    } else {
-        $exists = false;
-    }
-
-    if ($exists == false) {
-        $query = "INSERT INTO `emp` (`emp_id`, `emp_name`, `emp_email`, `emp_phone`,`emp_type`, `emp_age`, `emp_gender`, `emp_pass`, `emp_date`, `emp_status`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), 1);";
-        $stmt = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($stmt, "sssssss", $emp_name, $emp_email, $emp_phone, $emp_type, $emp_age, $emp_gender, $emp_pass);
-        mysqli_stmt_execute($stmt);
-
-        if (mysqli_stmt_affected_rows($stmt) > 0) {
-            header("Location: gotologin.html");
-            exit();
-        } else {
-            echo "<p style='color:red'>Error registering user</p>";
-        }
-    } else {
-        $emailEx = "<p style='color:red'>Email already exists</p>";
-    }
-}
-?-->
-<?php
 $emailEx = false;
 $exists = false;
 
@@ -95,7 +45,7 @@ if (isset($_POST['apply'])) {
         // Hash password using bcrypt
         $hashed_pass = password_hash($emp_pass, PASSWORD_BCRYPT);
 
-        $query = "INSERT INTO `emp` (`emp_id`, `emp_name`, `emp_email`, `emp_phone`, `emp_type`, `emp_age`, `emp_gender`, `emp_pass`, `emp_date`, `emp_status`) VALUES (NULL,?,?,?,?,?,?,?, current_timestamp(), 1);";
+        $query = "INSERT INTO `emp` (`emp_id`, `emp_name`, `emp_email`, `emp_phone`, `emp_type`, `emp_age`, `emp_gender`, `emp_pass`, `emp_date`, `is_free`) VALUES (NULL,?,?,?,?,?,?,?, current_timestamp(), 1);";
         $stmt = mysqli_prepare($conn, $query);
         mysqli_stmt_bind_param($stmt, "sssssss", $emp_name, $emp_email, $emp_phone, $emp_type, $emp_age, $emp_gender, $hashed_pass);
         mysqli_stmt_execute($stmt);
@@ -109,6 +59,50 @@ if (isset($_POST['apply'])) {
     } else {
         $emailEx = "<p style='color:red'>Email already exists</p>";
     }
+}
+if (isset($_POST['book'])){
+    $user_id = $_SESSION['user_id'];
+    $tour_date = $_POST['tour_date'];
+
+    // Get User Details 
+    $userSql = "SELECT * FROM `tuser` WHERE `id` = $user_id";
+    $result = $conn->query($userSql);
+    if ($result->num_rows == 0) {
+            die("User not found.");
+    }
+    $user = $result->fetch_assoc();
+
+    // Find a free guide
+    $empSql = "SELECT * FROM emp WHERE is_free = TRUE LIMIT 1";
+    $result = $conn->query($empSql);
+    if ($result->num_rows == 0) {
+        die("No available guides at the moment. Please try again later.");
+    }
+    $emp = $result->fetch_assoc();
+    $emp_id = $emp['emp_id'];
+    
+    // Create assignment
+    $sql = "INSERT INTO tour_assignments (user_id, emp_id, tour_date) VALUES ($user_id, $emp_id, '$tour_date')";
+    $conn->query($sql);
+
+    // Mark guide as busy
+    $sql = "UPDATE emp SET is_free = FALSE WHERE emp_id = $emp_id";
+    $conn->query($sql);
+
+
+    // Send email to user
+ //   $to = $user['uemail'];
+   // $subject = "Tour Guide Assigned";
+  //  $message = "Dear " . $user['uname'] . ",\n\nYou have been assigned a tour guide.\n\nGuide Details:\nName: " . $emp['emp_name'] . "\nEmail: " . $emp['emp_email'] ."\nPhone: " . $emp['emp_phone'] ."\nAge: " . $emp['emp_age'] . "\nGender: " . $emp['emp_gender'] . "\nTour Date: $tour_date\n\nBest Regards,\nTouritWeb";
+  //  mail($to, $subject, $message);
+
+    // Send email to guide
+   // $to = $emp['emp_email'];
+   // $subject = "New Tour Assignment";
+   // $message = "Dear " . $emp['emp_name'] . ",\n\nYou have been assigned a new tour.\n\nUser Details:\nName: " . $user['uname'] . "\nEmail: " . $user['uemail'] . "\nTour Date: $tour_date\n\nBest Regards,\nTouritWeb";
+   // mail($to, $subject, $message);
+
+    echo "Tour booked successfully. You will receive an email with your guide details.";
 }
 ?>
 <html lang="en">
@@ -297,7 +291,7 @@ if (isset($_POST['apply'])) {
             <div class="content">
                 <h1>Want Tourist?</h1>
                 <center><i class="fa-solid fa-arrow-down arrow"></i></center>
-                <a href="">Yes</a>
+                <a onclick="openBookForm()">Yes</a>
             </div>
         </div>
     </div>
@@ -330,7 +324,19 @@ if (isset($_POST['apply'])) {
                 <button style="margin-top: 30px;" name="close" onclick="closeForm()">close</button>
             </form>
         </div>
+<!-- Booking Form Widget Here -->
 
+
+<div class="form-popup" id="myApplyForGuideForm">
+            <form method="POST" class="form-container">
+                <h3 style="margin-top: 50px;">Book Tour Guide</h3>
+               
+                <label for="register-date">Tour Date</label>
+                <input type="date"  id="register-email" name="tour_date" required>
+                <button type="submit" style="margin-top: 30px;" name="book">Book</button>
+                <button style="margin-top: 30px;" name="close" onclick="closeBookForm()">close</button>
+            </form>
+        </div>
         <!-- Apply Form Widget Here -->
 
         <div class="apply-form-popup" id="myApplyForm">
@@ -486,6 +492,13 @@ if (isset($_POST['apply'])) {
 
             function closeApplyForm() {
                 document.getElementById("myApplyForm").style.display = "none";
+            }
+            function openBookForm() {
+                document.getElementById("myApplyForGuideForm").style.display = "block";
+            }
+
+            function closeBookForm() {
+                document.getElementById("myApplyForGuideForm").style.display = "none";
             }
         </script>
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>

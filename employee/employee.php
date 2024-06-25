@@ -72,8 +72,6 @@ if (!isset($_SESSION['emploggedin']) || $_SESSION['emploggedin'] != true) {
                             <th scope="col">Name</th>
                             <th scope="col">Use</th>
                             <th scope="col">Button</th>
-
-
                         </tr>
                     </thead>
                     <tbody>
@@ -105,13 +103,6 @@ if (!isset($_SESSION['emploggedin']) || $_SESSION['emploggedin'] != true) {
     <script src="./assets/js/dataTables/datatables.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.dataTables.min.js"></script>
     <script>
-        /*    $(document).ready(function() {
-               $('#adminFunction').DataTable();
-           });*/
-        /*
-  function logOut () {
-  window.location = 'adminlogout.php';
-  }*/
     </script>
 </body>
 
