@@ -12,6 +12,39 @@ $exists = false;
 // Connect to database
 include("../config/db_connect.php");
 
+// Mail 
+include('smtp/PHPMailerAutoload.php');
+function smtp_mailer($to,$subject, $msg){
+	$mail = new PHPMailer(); 
+	$mail->IsSMTP(); 
+	$mail->SMTPAuth = true; 
+	$mail->SMTPSecure = 'tls'; 
+	$mail->Host = "smtp.gmail.com";
+	$mail->Port = 587; 
+	$mail->IsHTML(true);
+	$mail->CharSet = 'UTF-8';
+	//$mail->SMTPDebug = 2; 
+	$mail->Username = "rubbysoft.co@gmail.com";
+	$mail->Password = "wvug hwjq phdj vbuh";
+	$mail->SetFrom("rubbysoft.co@gmail.com");
+	$mail->Subject = $subject;
+	$mail->Body =$msg;
+	$mail->AddAddress($to);
+	$mail->SMTPOptions=array('ssl'=>array(
+		'verify_peer'=>false,
+		'verify_peer_name'=>false,
+		'allow_self_signed'=>false
+	));
+	if(!$mail->Send()){
+	//	echo $mail->ErrorInfo;
+	}else{
+	return 'Sent';
+	}
+}
+
+// echo smtp_mailer('to_email','Subject','html');
+
+
 if (isset($_POST['apply'])) {
     $emp_name = $_POST['emp_name'];
     $emp_email = $_POST['emp_email'];
@@ -89,20 +122,22 @@ if (isset($_POST['book'])){
     $sql = "UPDATE emp SET is_free = FALSE WHERE emp_id = $emp_id";
     $conn->query($sql);
 
-/*
+
     // Send email to user
     $to = $user['uemail'];
     $subject = "Tour Guide Assigned";
     $message = "Dear " . $user['uname'] . ",\n\nYou have been assigned a tour guide.\n\nGuide Details:\nName: " . $emp['emp_name'] . "\nEmail: " . $emp['emp_email'] ."\nPhone: " . $emp['emp_phone'] ."\nAge: " . $emp['emp_age'] . "\nGender: " . $emp['emp_gender'] . "\nTour Date: $tour_date\n\nBest Regards,\nTouritWeb";
-    mail($to, $subject, $message);
+    //mail($to, $subject, $message);
+    echo smtp_mailer($to,$subject,$message);
 
     // Send email to guide
     $to = $emp['emp_email'];
     $subject = "New Tour Assignment";
     $message = "Dear " . $emp['emp_name'] . ",\n\nYou have been assigned a new tour.\n\nUser Details:\nName: " . $user['uname'] . "\nEmail: " . $user['uemail'] . "\nTour Date: $tour_date\n\nBest Regards,\nTouritWeb";
-    mail($to, $subject, $message);
+    // mail($to, $subject, $message);
+    echo smtp_mailer($to,$subject,$message);
    // echo "Tour booked successfully. You will receive an email with your guide details.";
-}*/
+}
 ?>
 <html lang="en">
 
