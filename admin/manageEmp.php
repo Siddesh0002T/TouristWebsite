@@ -10,10 +10,10 @@ $insert = false;
 include './config/db_connect.php';
 if (isset($_GET['delete'])) {
     $sno = $_GET['delete'];
-    $stmt = $conn->prepare("DELETE FROM `tuser` WHERE `id` =?");
+    $stmt = $conn->prepare("DELETE FROM `emp` WHERE `id` =?");
     $stmt->bind_param("i", $sno);
     if ($stmt->execute()) {
-        echo "Record deleted successfully";
+        echo "Employee deleted successfully";
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -180,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <td>" . $row['emp_age'] . "</td>
                                     <td>" . $row['emp_gender'] . "</td>
                                    <td>" . $row['emp_date'] . "</td>
-                                    <td><button class='btn btn-sm btn-primary edit' id=" . $row['emp_id'] . ">Edit</button> <button class='btn btn-sm btn-danger delete' id=d" . $row['emp_id'] . ">Delete</button></td>
+                                    <td> <button class='btn btn-sm btn-danger delete' id=d" . $row['emp_id'] . ">Delete</button></td>
                                     <td>" . $row['emp_status'] . "</td>
                                 </tr>";
                         }
@@ -247,9 +247,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             element.addEventListener("click", (e) => {
                 console.log("delete",);
                 sno = e.target.id.substr(1,);
-                if (confirm("Delete User !")) {
+                if (confirm("Delete Employeee !")) {
                     console.log("yes");
-                    window.location = 'manageuser.php?delete=' + sno;
+                    window.location = 'manageEmp.php?delete=' + sno;
                 }
                 else {
                     console.log("no");
