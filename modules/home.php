@@ -38,7 +38,7 @@ function smtp_mailer($to,$subject, $msg){
 	if(!$mail->Send()){
 	//	echo $mail->ErrorInfo;
 	}else{
-	return 'Sent';
+//	return 'Sent';
 	}
 }
 
@@ -109,7 +109,7 @@ if (isset($_POST['book'])){
     $empSql = "SELECT * FROM emp WHERE is_free = TRUE LIMIT 1";
     $result = $conn->query($empSql);
     if ($result->num_rows == 0) {
-        die("No available guides at the moment. Please try again later.");
+        header("location: notfound.php"); // notfound.php
     }
     $emp = $result->fetch_assoc();
     $emp_id = $emp['emp_id'];
@@ -137,6 +137,7 @@ if (isset($_POST['book'])){
     // mail($to, $subject, $message);
     echo smtp_mailer($to,$subject,$message);
    // echo "Tour booked successfully. You will receive an email with your guide details.";
+   header("location: viewtour.php");
 }
 ?>
 <html lang="en">
@@ -188,7 +189,7 @@ if (isset($_POST['book'])){
                 <li><a href="hisofnas.html">History</a></li>
                 <li><a href="Destination.html">Destination</a></li>
                 <li><a href="image.html">Images</a></li>
-                <li class='welcome'> <?php
+                <li onclick="location.href='../employee/employee.php'" class='welcome'> <?php
                 echo "" . $_SESSION['uname'] . "!";
                 ?></li>
                 <li><input class="search__input" type="text" placeholder="Search"></li>

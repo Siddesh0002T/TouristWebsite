@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $num = mysqli_num_rows($result);
     if ($num == 1){
         while($row=mysqli_fetch_assoc($result)){
-           
+            
                 $login = true;
                 session_start();
                 $_SESSION['loggedin'] = true;
