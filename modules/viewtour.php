@@ -49,7 +49,7 @@ $user_id = $_SESSION['user_id'];
                                     <td>" . $row['emp_age'] . "</td>
                                     <td>" . $row['emp_gender'] . "</td>
                                     <td>" . $row['tour_date'] . "</td>
-                                    <td><span class='status-btn btn btn-dark' data-task-id='" . $row['id'] . "' data-status='" . $row['status'] . "'>" . ($row['status'] == 1 ?  'Completed' : 'Pending') . "</span></td>
+                                    <td><span class='status-btn btn btn-dark' data-task-id='" . $row['id'] . "' data-status='" . $row['status'] . "'>" . ($row['status'] == 1 ?  'Pending' :'Completed' ) . "</span></td>
                                 </tr>";
                         }
                         ?>

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id']) && isset($_POST[
     $stmt->execute();
 
  
-    if($status == 1){
+    if($status == 0){
         $sql = "UPDATE emp SET is_free = TRUE WHERE emp_id = $emp_id";
         $conn->query($sql);
     }
@@ -144,7 +144,7 @@ $result = $stmt->get_result();
                                     <td>" . $row['uname'] . "</td>
                                     <td>" . $row['uemail'] . "</td>
                                     <td>" . $row['tour_date'] . "</td>
-                                    <td><button class='status-btn btn btn-dark' data-task-id='" . $row['id'] . "' data-status='" . $row['status'] . "'>" . ($row['status'] == 1 ?  'Completed' : 'Pending') . "</button></td>
+                                    <td><button class='status-btn btn btn-dark' data-task-id='" . $row['id'] . "' data-status='" . $row['status'] . "'>" . ($row['status'] == 1 ?  'Pending' : 'Completed' ) . "</button></td>
                                 </tr>";
                         }
                         ?>
@@ -207,7 +207,7 @@ $result = $stmt->get_result();
                .then(message => {
                     console.log(message);
                     // Update the button text
-                    this.textContent = status == 1?  'Completed':'Pending';
+                    this.textContent = status == 1?  'Pending':'Completed';
                 })
                .catch(error => console.error(error));
             });
