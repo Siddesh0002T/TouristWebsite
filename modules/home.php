@@ -369,7 +369,8 @@ if (isset($_POST['book'])){
                 <label for="register-date">Tour Date</label>
                 <input type="date"  id="register-email" name="tour_date" required>
                 <button type="submit" style="margin-top: 30px;" name="book">Book</button>
-                <button style="margin-top: 30px;" name="close" onclick="closeBookForm()">close</button>
+                <button style="margin-top: 30px;" name="myBooking" onclick="location.href='viewtour.php'" name="book">My Booking</button>
+                <button style="margin-top: 30px;" name="close" onclick="closeBookForm()">close</button> 
             </form>
         </div>
         <!-- Apply Form Widget Here -->
@@ -535,6 +536,10 @@ if (isset($_POST['book'])){
             function closeBookForm() {
                 document.getElementById("myApplyForGuideForm").style.display = "none";
             }
+
+           /* function myBooking() {
+                window.location('viewtour.php');
+            }*/
         </script>
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
