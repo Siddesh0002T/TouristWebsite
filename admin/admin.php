@@ -153,31 +153,7 @@ if (!isset($_SESSION['adminloggedin']) || $_SESSION['adminloggedin'] != true) {
                                     onclick="location.href='manageEmp.php'">Go !</button></td>
                         </tr>
                     </tbody>
-                </table>
-                <h3>Tours</h3>
-                <hr>
-                <table class="table" id="adminFunction">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Use</th>
-                            <th scope="col">Button</th>
-
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                       
-                        <tr>
-                            <td>
-                                <h3><b>Manage Tours</b></h3>
-                            </td>
-                            <td>Manage Tours edit,block/unblock,and delete user from database</td>
-                            <td><button class="btn btn-outline-primary" type="button"
-                                    onclick="location.href='manageEmp.php'">Go !</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+               
             </div>
         </div>
     </div>
