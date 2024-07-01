@@ -157,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <td>" . $row['uemail'] . "</td>
                                     <td>" . $row['register_date'] . "</td>
                                     <td><button class='btn btn-sm btn-primary edit' id=" . $row['id'] . ">Edit</button> <button class='btn btn-sm btn-danger delete' id=d" . $row['id'] . ">Delete</button></td>
-                                    <td>" . $row['block_unblock'] . "</td>
+                               
                                 </tr>";
                         }
                         ?>
