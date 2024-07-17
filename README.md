@@ -1,7 +1,7 @@
 # Project State
 Project is under Devlopment
 if you setup project you get some errors 
-
+# Porject is deploy in free hosting so it give some errors and problems
 # TouristWebsite
 Tourist Website for Nashik turists 
 
